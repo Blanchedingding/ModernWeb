@@ -8,6 +8,7 @@ var lessMiddleware = require('less-middleware');
 
 var index = require('./routes/index');
 var users = require('./routes/users');
+var test = require('./routes/test');
 
 var app = express();
 
@@ -27,7 +28,8 @@ app.use(express.static(path.join(__dirname, 'public')));
 app.use('/swagger', express.static(path.join(__dirname, 'swagger')));
 
 
-app.use('/', index);
+// app.use('/', index);
+app.use('/', test);
 app.use('/users', users);
 
 // catch 404 and forward to error handler
