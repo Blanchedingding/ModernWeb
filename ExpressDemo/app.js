@@ -8,7 +8,8 @@ var lessMiddleware = require('less-middleware');
 
 var index = require('./routes/index');
 var users = require('./routes/users');
-var test = require('./routes/test');
+var test1 = require('./routes/test1');
+var test2 = require('./routes/test2');
 
 var app = express();
 
@@ -17,7 +18,7 @@ app.set('views', path.join(__dirname, 'views'));
 app.set('view engine', 'jade');
 
 // uncomment after placing your favicon in /public
-//app.use(favicon(path.join(__dirname, 'public', 'favicon.ico')));
+// app.use(favicon(path.join(__dirname, 'public', 'favicon.ico')));
 app.use(logger('dev'));
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: false }));
@@ -28,8 +29,9 @@ app.use(express.static(path.join(__dirname, 'public')));
 app.use('/swagger', express.static(path.join(__dirname, 'swagger')));
 
 
-// app.use('/', index);
-app.use('/', test);
+app.use('/', index);
+app.use('/test1', test1);
+app.use('/test2', test2);
 app.use('/users', users);
 
 // catch 404 and forward to error handler
