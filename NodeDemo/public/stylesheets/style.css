@@ -1,0 +1,15 @@
+body {
+  padding: 50px;
+  font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
+}
+
+a {
+  color: #00B7FF;
+}
+
+.plate{
+  width:30px;
+  height:30px;
+  border-radius: 30px;
+  background-color: red;
+}

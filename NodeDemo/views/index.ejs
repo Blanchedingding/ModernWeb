@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title><%= title %></title>
+    <link rel='stylesheet' href='/stylesheets/style.css' />
+  </head>
+  <body>
+    <h1><%= title %></h1>
+    <p>Welcome to <%= title %></p>
+
+    <table id="plate-table">
+        <thead>Turn Plate</thead>
+        <tbody>
+
+          <tr>
+            <td><div class="plate"></div></td>
+            <td><div class="plate"></div></td>
+            <td><div class="plate"></div></td>
+          </tr>
+          <tr>
+            <td><div class="plate"></div></td>
+            <td><div class="plate"></div></td>
+            <td><div class="plate"></div></td>
+          </tr>
+          <tr>
+            <td><div class="plate"></div></td>
+            <td><div class="plate"></div></td>
+            <td><div class="plate"></div></td>
+          </tr>
+        </tbody>
+    </table>
+
+    <table >
+      <thead>Turn Plate</thead>
+      <tbody>
+          <%for (var i = 0; i < 3; i++){%>
+          <tr>
+              <%for (var j = 0; j < 3; j++){%>
+                  <td><div class="plate" onclick="clickPlate(this)"></div></td>
+              <%}%>
+          </tr>
+          <%}%>
+      </tbody>
+    </table>
+
+
+
+    <script src='/javascripts/jquery-3.2.1.min.js' type='text/javascript'></script>
+  </body>
+
+</html>

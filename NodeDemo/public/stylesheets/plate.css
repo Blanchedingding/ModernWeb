@@ -1,0 +1,37 @@
+body {
+    padding: 50px;
+    font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
+}
+
+a {
+    color: #00B7FF;
+}
+
+.plate{
+    width:30px;
+    height:30px;
+    border-radius: 30px;
+    background-color: darkgrey;
+    /*background-color: red;*/
+}
+
+#messages {
+    width: 200px;
+    height: 50px;
+    overflow: auto;
+    background-color: #eee;
+
+    margin-bottom: 1em;
+    margin-right: 10px;
+}
+
+#game-list {
+    float: right;
+    width: 200px;
+    height: 50px;
+    overflow: auto;
+}
+
+#game-list div {
+    border-bottom: 1px solid #eee;
+}
