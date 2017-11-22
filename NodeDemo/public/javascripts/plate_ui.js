@@ -17,9 +17,8 @@ var gameName = "";
 var color = "";
 
 var colorString = {
-    "rgb(255,0,0)":"red",
-    "rgb(0,255,0)":"green",
-    "rgb(0,0,255)":"blue"
+    "rgb(255, 0, 0)":"red",
+    "rgb(0, 0, 255)":"blue"
 };
 
 $(document).ready(function() {
@@ -41,7 +40,7 @@ $(document).ready(function() {
             $('#game').text(result.game);
             gameName = result.game;
             color = result.color;
-            $('#messages').append(divSystemContentElement("Join the game successfully!"));
+            $('#messages').append(divSystemContentElement("Join the game " + gameName +" successfully!"));
         } else {
             $('#messages').append(divSystemContentElement(result.message));
         }
@@ -61,7 +60,6 @@ $(document).ready(function() {
     });
 
     socket.on('games', function(games) {
-        // console.log(JSON.stringify(games));
         $('#game-list').empty();
         for(var i = 0; i < games.length; i++) {
             var game = games[i];
@@ -72,6 +70,17 @@ $(document).ready(function() {
         $('#game-list div').click(function() {
             plateGame.joinGame($(this).text());
         });
+    });
+
+    socket.on('gameOver', function(message) {
+        alert(message.winner +" is the winner!");
+        for(var i = 0; i < 5; i++){
+            for(var j = 0; j < 5; j++){
+                $('.i .j').unbind("click", function(e){
+                    console.log(e);
+                });
+            }
+        }
     });
 
     setInterval(function() {
@@ -87,22 +96,32 @@ function clickPlate(plate){
         alert("Please join one game first!");
     } else {
         if(window.getComputedStyle(plate).backgroundColor != color){
-            // alert("backgroundColor: " + window.getComputedStyle(plate).backgroundColor);
-            alert(color + "---" + colorString[color]);
             plate.style.background = colorString[color];
-            // alert("gameName:" + gameName + " row: " + plate.parentNode.parentNode.className + " col:" + plate.parentNode.className);
             plateGame.sendTurnPlate(gameName,plate.parentNode.parentNode.className, plate.parentNode.className);
+            var hasWin = 1;
+
+            $('.plate').each(function(index){
+                if($(this).css("background-color") != color){
+                    // console.log($(this).css("background-color"));
+                    // console.log("color=" + color);
+                    hasWin = 0;
+                }
+            });
+            if(hasWin == 1){
+                // alert("has Win!");
+                $('#messages').append(divSystemContentElement("You are the winner!"));
+                plateGame.winGame(gameName);
+            }
         }
     }
 }
 
 function createNewGame(){
     var gameName = $('#new-game-input').val();
-    // alert(gameName);
     if(null != gameName && "" != gameName && "Please input a new game name" != gameName){
         plateGame.joinGame(gameName);
     } else {
-        alert("Please input the game name!")
+        alert("Please input the game name!");
     }
 
 }

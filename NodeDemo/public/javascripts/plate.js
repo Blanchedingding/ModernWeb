@@ -19,3 +19,9 @@ Plate.prototype.joinGame = function(gameName) {
         gameName:gameName
     });
 };
+
+Plate.prototype.winGame = function(gameName) {
+    this.socket.emit('winGame', {
+        gameName:gameName
+    });
+};

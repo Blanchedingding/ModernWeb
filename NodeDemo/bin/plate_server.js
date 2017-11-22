@@ -3,7 +3,7 @@
  */
 var socketio = require('socket.io');
 var io;
-var colors = ["rgb(255,0,0)","rgb(0,255,0)","rgb(0,0,255)"];
+var colors = ["rgb(255, 0, 0)","rgb(0, 0, 255)"];
 var namesUsed = [];
 var players = {};
 var games = {};
@@ -15,15 +15,12 @@ exports.listen = function(server) {
     io = socketio(server);
     // io.set('log level', 1);
     io.sockets.on('connection', function (socket) {
-        // console.log("socketId : " + socket.id);
         playerNumber = assignPlayerName(socket);
         handleGameJoining(socket);
         handleTurnPlateBroadcasting(socket);
         handleClientDisconnection(socket);
+        handleWinGame(socket);
         socket.on('games', function() {
-            // console.log("boardcast gameUsed:");
-            // console.log(gameUsed);
-            // console.log("-------------")
             socket.emit('games', gameUsed);
         });
     });
@@ -63,9 +60,6 @@ function joinGame(socket,gameName) {
     //游戏名不存在，新开一局
     if(gameUsed.indexOf(gameName) < 0){
         gameUsed.push(gameName);
-        // console.log("add game name to gameUsed:");
-        // console.log(gameUsed);
-        // console.log("-------------")
         games[gameName] = {};
         games[gameName]['playerNum'] = 1;
         games[gameName]['colors'] = [colors[0]];
@@ -90,9 +84,6 @@ function joinGame(socket,gameName) {
     });
 
     var playerInGame = io.sockets.adapter.rooms[gameName];
-    // console.log("gameName:" + gameName);
-    // console.log("playerInGame: " );
-    // console.log(playerInGame);
     if (playerInGame.length > 1) {
         var playerInGameSummary = 'Users currently in ' + gameName + ': ';
         for (var id in playerInGame.sockets) {
@@ -109,8 +100,6 @@ function joinGame(socket,gameName) {
 
 function handleTurnPlateBroadcasting(socket) {
     socket.on('turnPlate', function (message) {
-        console.log("players[socket.id]:");
-        console.log(players[socket.id]);
         socket.to(message.gameName).emit('turnPlate', {
             color: players[socket.id]['color'],
             row:message.row,
@@ -122,9 +111,6 @@ function handleTurnPlateBroadcasting(socket) {
 function handleClientDisconnection(socket) {
     socket.on('disconnect', function() {
         if(currentGame[socket.id]){
-            // console.log("id:" + socket.id);
-            // console.log(JSON.stringify(players));
-            // console.log(JSON.stringify(players[socket.id]));
             var colorIndex = games[currentGame[socket.id]]['colors'].indexOf(players[socket.id]['color']);
             delete games[currentGame[socket.id]]['colors'][colorIndex];
             games[currentGame[socket.id]]['playerNum'] --;
@@ -137,6 +123,14 @@ function handleClientDisconnection(socket) {
         var nameIndex = namesUsed.indexOf(players[socket.id]['name']);
         delete namesUsed[nameIndex];
         delete players[socket.id];
+    });
+}
+
+function handleWinGame(socket){
+    socket.on('winGame', function (message) {
+        socket.to(message.gameName).emit('gameOver', {
+            winner:players[socket.id]['name']
+        });
     });
 }
 
