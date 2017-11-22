@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<head>
+    <meta charset="UTF-8">
+    <title>问题页面</title>
+    <link rel="stylesheet" type="text/css" href="font-awesome/css/font-awesome.css">
+    <link rel="stylesheet" type="text/css" href="font-awesome/css/font-awesome.min.css">
+    <link rel="stylesheet" type="text/css" href="stylesheets/question.css">
+    <script type="text/javascript" src="javascripts/question.js" defer="defer" charset="utf-8"></script>
+</head>
+
+<body>
+<div class="nav">
+    <div class="nav-inner">
+        <img src="img/logo.png" class="logo">
+        <i class="fa fa-search fa-1x" style="color:#996699;z-index:2;position:relative;left:-380px;top:20px;"></i>
+        <input type="text" id="searchinput" value="搜索问题或用户">
+        <input type="submit" class="mybutton" id="searchbutton" value="提问题">
+
+        <div class="menubar">
+            <li class="menu"><a href="#">首页</a></li>
+            <li class="menu"><a href="#">话题</a></li>
+            <li class="menu"><a href="#">发现</a></li>
+        </div>
+
+        <div class="nav-user">
+            <a class="menu" href="#"><img src="img/user/user1.gif">
+                <a id="name" href="#">魅力兔斯基</a>
+            </a>
+            <ul class="submenubar">
+                <li><a href="#">
+                        <i class="fa fa-user fa-1x"></i>&nbsp&nbsp我的主页</a></li>
+                <li><a href="#">
+                        <i class="fa fa-envelope-o fa-1x"></i>&nbsp&nbsp私信</a></li>
+                <li><a href="#">
+                        <i class="fa fa-gear fa-1x"></i>&nbsp&nbsp设置</a></l>
+                <li><a href="#">
+                        <i class="fa fa-sign-out fa-1x"></i>&nbsp&nbsp退出</a></li>
+            </ul>
+        </div>
+    </div>
+</div>
+
+<div class="questionmain">
+
+    <div class="questionleft">
+        <div class="questiondiv">
+            <div class="question">什么时候你会觉得自己养宠物是个错误的决定？</div>
+            <div class="questionperson">
+                <a href="#" class="questionname">樱桃小丸子</a>
+                <a class="time">提问于 2015-05-01 23:31</a>
+                <hr>
+            </div>
+        </div><!--questiondiv end-->
+        <div class="answer">
+            <a href="#"><img src="img/user/user5.jpg"></a>
+            <div class="answerperson">
+                <a class="answername" herf="#">喵喵</a>
+                <a class="answerintroduction">&nbsp&nbsp&nbsp我很荣幸，作为一只小懒猫</a>
+            </div>
+            <div class="answercontent">
+                当你发现他们一天天老去，意识到他们的生命在一点一点逝去，总有一天会在你眼前死去。宠物的寿命本来就比人更短，失去他们的时候会后悔，会心痛。
+            </div>
+            <div class="afteranswer">
+                <a id="commentlabel" href="#">评论(3)</a>
+                <a class="time">2015-05-02 8:00</a>
+            </div><!--afteranswer end-->
+            <div id="comment">
+                <div class="commenttip">
+                    <a href="#"><img src="img/user/user6.jpg"></a>
+                    <a class="commentname" herf="#">cup dog</a><br>
+                    <div class="commetcontent">深有同感~~</div>
+                    <a class="commenttime">2015-05-02 8:30</a>
+                    <hr>
+                </div>
+
+                <div class="commenttip">
+                    <a href="#"><img src="img/user/user7.jpg"></a>
+                    <a class="commentname" herf="#">玉面狐狸</a><br>
+                    <div class="commetcontent">养乌龟啊！乌龟长寿的啊！</div>
+                    <a class="commenttime">2015-05-02 9:00</a>
+                    <hr>
+                </div>
+
+                <div class="commenttip">
+                    <a href="#"><img src="img/user/user8.jpg"></a>
+                    <a class="commentname" herf="#">俊介小女友</a><br>
+                    <div class="commetcontent">楼上走远点!</div>
+                    <a class="commenttime">2015-05-02 9:05</a>
+                    <hr>
+                </div>
+
+                <div class="mycomment">
+                    <input type="text" id="mycommentcontent">
+                    <input type="submit" class="mybutton" id="submitcomment" value="发表评论">
+                </div>
+            </div><!--comment end-->
+        </div><!--answer end-->
+        <hr>
+        <div class="answer">
+            <a href="#"><img src="img/user/user9.jpg"></a>
+            <div class="answerperson">
+                <a class="answername" herf="#">蠢萌大可爱</a>
+                <a class="answerintroduction">
+                    &nbsp&nbsp&nbsp是的，我养了一只愚蠢的萨摩耶</a>
+            </div>
+            <div class="answercontent">
+                当你拖着疲倦的身体回到家时看见下面的场景，我肯定你会觉得现在流的泪就是你当初决定养他时脑子里进的水。。。。。。<br>
+                <img src="img/dog/baddog.jpg">
+            </div>
+            <div class="afteranswer">
+                <a id="commentlabel" href="#">评论(6)</a>
+                <a class="time">2015-05-02 21:23</a>
+            </div><!--afteranswer2 end-->
+        </div><!--answer2 end-->
+        <hr>
+
+        <form id="myanswer"  method="post"  action="#" >
+            <textarea id="myanswercontent"></textarea><br>
+            &nbsp&nbsp&nbsp&nbsp<a href="#"><i class="fa fa-picture-o fa-2x" style="color:#CC99CC"></i></a>
+            <input type="submit" class="mybutton" id="submitanswer" value="发布回答">
+        </form>
+
+    </div><!--profileleft end-->
+
+    <div class="questionright">
+        <div class="hotquestion">
+            <h3>热门问题</h3>
+            <li><a href="#">仓鼠可以喝酸奶吗？</a></li>
+            <li><a href="#">老猫生了只小猫，三个月大，有人愿意领养吗？</a></li>
+            <li><a href="#">捡到一只乌龟，养乌龟需要办手续吗？</a></li>
+            <li><a href="#">什么样的狗人见人爱、花见花开？</a></li>
+            <li><a href="#">眼镜蛇可以当宠物养吗？</a></li>
+        </div>
+        <hr>
+        <div class="hotuser">
+            <h3>热门用户</h3>
+            <div class="userbrief">
+                <img src="img/user/user2.jpg" href="#">
+                <a class="hotname" herf="#">精灵鼠小弟</a><br>
+                <div class="introduction">哦！我是一只可爱的小老鼠，小老鼠，小老鼠(￣︶￣)</div>
+            </div>
+
+            <div class="userbrief">
+                <img src="img/user/user4.jpg" href="#">
+                <a class="hotname" herf="#">俊介</a><br>
+                <div class="introduction">我叫俊介，我是一只博美犬，我很可爱，我很红！大家都很喜欢我哦！
+                </div>
+            </div>
+
+            <div class="userbrief">
+                <img src="img/user/user3.jpg" href="#">
+                <a class="hotname" herf="#">草原上一匹奔腾的羊驼</a><br>
+                <div class="introduction">我很萌，我很萌，我很萌，我很萌，我很萌，我很萌，我很萌，我很萌，我很萌,其实我只是想试试文字会不会跑到左边去而已</div>
+            </div>
+        </div>
+        <hr>
+        <div class="copyright">
+            <a>@2015 Petalk</a>
+        </div>
+    </div>
+
+</div>
+</body>
+</html>

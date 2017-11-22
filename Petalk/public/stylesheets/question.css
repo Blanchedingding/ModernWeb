@@ -1,0 +1,527 @@
+@charset "utf-8";
+body {
+    margin: 0;
+    font-family: 'Helvetica Neue',Helvetica,Arial,sans-serif;
+}
+
+hr{
+   border:0;
+   background-color:#CC99CC;
+   height:1px;
+   clear:both;
+}
+
+img:hover{
+  box-shadow: 0 0 1px 1px rgba(0,0,0,0.5);
+}
+
+.nav {
+   top:0;
+   height:60px; 
+   width:100%;
+   background-color:#CC99CC;
+   
+}
+
+.nav-inner {
+  width:1200px;
+	height:60px;
+	background-color:#CC99CC;
+  margin-left:auto;
+	margin-right:auto;
+	
+}
+
+.mybutton{
+    background: #CC99CC;
+    line-height: 24px;
+    border-radius: 8px;
+    outline:none;
+    font-family: 'Helvetica Neue',Helvetica,Arial,sans-serif;
+    font-size:20px;
+    font-weight: bold;
+    color: #fff;
+}
+
+.mybutton:hover{
+    color:#fff;
+    cursor:pointer;
+    background: #996699;
+    box-shadow:  0 0 1px 1px rgba(0,0,0,0.5);
+}
+
+/* style for logo
+--------------------------------*/
+.logo {
+    width:190px;
+    height:45px;
+    float:left;
+    margin-top:5px;
+	 color:#efefef ;
+}
+
+/*搜索框*/
+#searchinput{
+   float: left;
+    background-color: #EBD3E8;
+    border-radius: 8px;
+    height: 28px;
+    width:200px;
+    outline:none;
+    margin:10px 0px 10px 30px;
+    color:#999;
+    font-size: 15px;
+    padding-right: 40px;
+}
+
+/*搜索按钮*/
+#searchbutton{
+    float: left;
+    margin-top:10px;
+    margin-left: 10px;
+    width:80px;
+    height:35px; 
+}
+
+/* 三个菜单*/
+.menubar {
+   float:left;
+   line-height:60px;
+   padding:0px 0px;
+   margin-left:20px;
+   text-decoration:none;
+   display:block;
+   font-family: 'Helvetica Neue',Helvetica,Arial,sans-serif;
+   font-size:20px;
+   font-weight: bold;
+}
+
+.menu {
+  line-height:60px;
+  padding:0px;
+  float:left;
+  width:80px;
+  height:60px;
+  text-align:center;
+  list-style:none;
+}
+
+.menu > a {
+  display:block;
+  text-decoration:none;
+  color:#fff ;
+}
+
+.menu:hover {
+  background-color:#996699;
+	height:60px;
+ }
+/*用户头像名字*/
+.nav-user{
+  float:right;
+  margin-right:80px;
+  margin-top: 0px;
+  padding: 0px 0px;
+  line-height:60px;
+  padding:0px;
+  width:150px;
+  height:60px;
+  text-align:center;
+  list-style:none;
+  text-align: left;
+
+}
+
+.nav-user:hover{
+   background-color:#996699;
+   height:60px;
+}
+
+.nav-user img{
+  width:50px;
+  height:50px;
+  float:left;
+  margin-top:5px;
+  margin-left:5px;
+   border-radius: 50px;
+}
+
+.nav-user a{
+   text-decoration: none;
+   color:#fff;
+   font-size: 18px;
+   font-weight: bold;
+}
+
+#name{
+  float:left;
+  width:70px;
+  overflow: hidden;
+  text-overflow:ellipsis;
+  -o-text-overflow:ellipsis;
+  white-space:nowrap;
+}
+
+
+
+
+/* style for submenus
+---------------------------------*/
+.submenubar {
+   visibility:hidden;
+   border:2px solid #CC99CC;
+   border-radius:4px;
+   width:120px;
+   margin:60px 0px;
+   padding:5px;
+   text-align:left;
+   list-style-type:none;
+   line-height:30px;
+   position:absolute;
+ }
+
+.nav-user:hover .submenubar {
+  visibility:visible;
+  background-color:#fff;
+ 
+}
+
+.submenubar > li {
+   list-style:none;
+   /*white-space:normal;*/
+   white-space:nowrap;
+   text-indent:0.5em;
+   border-radius: 4px;
+}
+
+.submenubar > li:hover {
+    background-color:#CC99CC;
+}
+
+.submenubar > li > a {
+   text-decoration:none;
+	 color:#996699;
+	 display:block;
+}
+
+.submenubar > li:hover > a {
+   color:#fff;
+ }
+
+/* style for triangles in submenubar
+You can take this as a reference to make this triangle:
+http://stackoverflow.com/questions/9450733/css-triangle-custom-border-color
+----------------------------------------*/
+.submenubar::before,
+.submenubar::after {
+   content: ' '; 
+   height: 0; 
+   position: relative; 
+   width: 0; 
+}
+
+.submenubar::before {
+  position: absolute; 
+  left: 65%;
+  top: -23%;
+  border: 14px solid;
+  border-color:  transparent transparent #CC99CC transparent;
+}
+
+.submenubar::after {
+    position: absolute; 
+	left: 66%; 
+	top: -20%;  
+	border: 13px solid; 
+	border-color: transparent transparent #fff transparent;
+}
+
+/*右侧热点问题和用户*/
+.questionmain{
+  width:1200px;
+  min-width: 1200px;
+  margin:auto;
+  font-family: "微软雅黑";
+  color:#660066;
+}
+
+.questionright{
+   float:right;
+   width:300px;
+   list-style-type:none;
+    color:#660066;
+}
+
+.hotquestion{
+  line-height:22px;
+  font-size: 15px;
+}
+
+
+.hotquestion li a{
+  text-decoration: none;
+  color:#660066;
+}
+
+.hotquestion li a:hover{
+  /*text-decoration:underline;*/
+  color:orange;
+}
+
+.hotuser{
+  color:#660066;
+}
+
+.userbrief{
+  margin:15px 5px;
+  color:#660066;
+}
+
+.userbrief img{
+  /*border-radius: 50px;*/
+   width:50px;
+   height:50px;
+   float:left;
+   margin-right: 10px;
+}
+
+.userbrief img:hover{
+   cursor: pointer;
+}
+
+.hotname{
+  font-size: 16px;
+  font-weight: bold;
+  text-decoration: none;
+}
+
+.hotname:hover{
+  cursor: pointer;
+  color:orange;
+}
+
+.introduction{
+    font-size: 15px;
+    text-decoration:none;
+    word-break:break-all;
+    padding:0px 0px;
+    margin-left:60px;
+    margin-top: 10px;
+    color:#996699;
+}
+
+.copyright{
+  text-align: center;
+  color:#CC99CC;
+}
+
+/*左边的问题及回答区域*/
+.questionleft{
+  float:left;
+  width:850px;
+  color:#660066;
+  margin-top:30px;
+  margin-bottom: 50px;
+  /*margin-right: 20px;*/
+}
+
+.question{
+   font-size: 20px;
+   font-weight: bold;
+   margin-bottom: 20px;
+}
+
+.questionname{
+  text-decoration: none;
+}
+
+.questionname:hover{
+    color:orange;
+}
+
+.time{
+   color:#CC99CC;
+   text-decoration: none;
+   margin-bottom: 20px;
+   font-size: 15px;
+}
+
+.answer{
+  margin-top: 20px;
+  margin-bottom: 50px;
+  /*margin-left: 20px;*/
+}
+
+.answer>a>img{
+  float:left;
+   width:50px;
+   height:50px;
+   margin-right: 10px;
+}
+
+
+
+.answerperson{
+  line-height: 50px;
+  margin-left: 60px;
+}
+
+.answername{
+  font-weight: bold;
+  cursor: pointer;
+}
+
+.answername:hover{
+  color:orange;
+}
+
+.answerintroduction{
+  font-size: 15px;
+  color:#996699;
+  word-break:break-all;
+}
+
+.answercontent{
+  margin-top: 20px;
+  margin-left: 10px;
+  margin-right: 20px;
+  margin-bottom: 20px;
+  word-break:break-all;
+}
+
+.afteranswer{
+  float:right;
+  position:relative;
+  /*right:-650px;*/
+  /*word-spacing: inline;*/
+    word-spacing: normal;
+}
+
+#commentlabel{
+  color:#CC99CC;
+  text-decoration: none;
+  margin-right: 10px;
+}
+
+#commentlabel:hover{
+  color:#660066;
+}
+
+/*评论区域*/
+#comment{
+  display: none;
+  position:relative;
+  top:30px;
+  width:800px;
+  border-radius: 8px;
+  border:1px solid #CC99CC;
+  margin-left:30px;
+  top:30px;
+  padding:10px 10px;
+}
+
+#comment::before,
+#comment::after {
+   content: ' '; 
+   height: 0; 
+   position: relative; 
+   width: 0; 
+}
+
+#comment::before {
+  position: absolute; 
+  left: 645px;
+  top: -29px;
+  border: 15px solid;
+  border-color:  transparent transparent #CC99CC transparent;
+}
+
+#comment::after {
+  position: absolute; 
+  left: 647px; 
+  top: -25px;  
+  border: 13px solid; 
+  border-color: transparent transparent #fff transparent;
+}
+
+.commenttip{
+  margin:20px 20px;
+}
+
+.commenttip>a>img{
+  width:50px;
+  height:50px;
+  float:left;
+  margin-right: 10px;
+}
+
+.commentname{
+  font-weight: bold;
+  cursor: pointer;
+}
+
+.commentname:hover{
+  color:orange;
+}
+
+
+.commetcontent{
+  margin-top: 10px;
+  margin-bottom: 10px;
+  margin-left: 60px;
+  word-break:break-all;
+}
+
+.commenttime{
+  margin-left: 60px;
+  color:#CC99CC;
+  font-size: 15px;
+}
+
+#mycommentcontent{
+  background-color: #EBD3E8;
+  color:#660066;
+  margin-left:20px;
+  border-radius: 8px;
+  width:750px;
+  height:30px;
+  outline:none;
+}
+
+#submitcomment{
+  width:100px;
+  height:30px;
+  margin-left: 670px;
+  margin-top: 10px;
+}
+
+#submitcomment:hover{
+    color:#fff;
+    cursor:pointer;
+    background: #996699;
+    box-shadow:  0 0 1px 1px rgba(0,0,0,0.5);
+}
+
+.answercontent>img{
+  width:650px;
+  height:400px;
+}
+
+#myanswercontent{
+  border-radius: 8px;
+  outline:none;
+  width:800px;
+  height:150px;
+  font-size: 20px;
+  resize:none;
+}
+
+#myanswercontent:hover{
+  /*box-shadow: 0 0 1px 1px rgba(0,0,0.5);*/
+    box-shadow: 0 0 1px 1px rgb(0,0,0.5);
+}
+
+#submitanswer{
+  float:right;
+  margin-right: 50px;
+}

@@ -1,0 +1,405 @@
+﻿@charset "utf-8";
+
+body {
+    width:1200px;
+    min-width: 1200px;
+    margin:auto;
+    font-family: "微软雅黑";
+}
+
+#back{
+  width:1200px;
+  margin:0 auto;
+  position:absolute;
+  left:0;
+  bottom:0;
+  right:0;
+  z-index:-1;
+}
+
+#back >img {
+  border:0;
+}
+
+#header{
+    background-color:#CC99CC;
+    height:300px;
+    border-radius: 10px;
+}
+
+ .middle{
+     width:1200px;
+    min-width: 1200px;
+    margin:0px 0px;
+    padding:0 0;
+
+}
+
+#biglogo{
+    float:left;
+    width:250px;
+    margin-top: 70px;
+    margin-left: 200px;
+}
+
+#submitform{
+    float:right;
+    width:200px;
+    margin-right: 200px;
+    margin-top: 30px;
+}
+
+#username{
+    float:right;
+    background-color: #EBD3E8;
+    border-radius: 8px;
+    height: 30px;
+    outline:none;
+    margin:10px 10px;
+    color:#999;
+}
+
+#email{
+    float:right;
+    background-color: #EBD3E8;
+    border-radius: 8px;
+    height: 30px;
+    outline:none;
+    margin:0px 10px;
+    color:#999;
+}
+
+#pw{
+    float:right;
+    background-color: #EBD3E8;
+    border-radius: 8px;
+    height: 30px;
+    outline:none;
+    margin:10px 10px;
+    color:#999;
+}
+
+#confirmpw{
+    float:right;
+    background-color: #EBD3E8;
+    border-radius: 8px;
+    height: 30px;
+    outline:none;
+    margin:0px 10px 10px;
+    color:#999;
+}
+
+/*错误提示*/
+#reg{
+	 font-family: 'Helvetica Neue',Helvetica,Arial,sans-serif;
+    color:#FF0033;
+    font-weight: bold;
+    white-space:normal;
+    margin-top:0px;
+    margin-bottom: 8px; 
+    margin-left: 20px;
+}
+
+#log{
+	 font-family: 'Helvetica Neue',Helvetica,Arial,sans-serif;
+    color:#FF0033;
+    font-weight: bold;
+    white-space:normal;
+    margin-top:0px;
+    margin-bottom: 8px; 
+    margin-left: 20px;
+}
+
+#error>p{
+    font-family: 'Helvetica Neue',Helvetica,Arial,sans-serif;
+    color:#FF0033;
+    font-weight: bold;
+    white-space:normal;
+    margin-top:0px;
+    margin-bottom: 8px; 
+    margin-left: 20px;
+}
+
+.button1{
+    float:right;
+    margin-right: 10px;
+	padding: 0px 0px;
+	width:70px;
+    height:25px;
+    background: #CC99CC;
+    line-height: 24px;
+    border-radius: 8px;
+    text-shadow: 0 2px 2px rgba(0,0,0,0.5);
+    border:none;
+    outline:none;
+}
+
+
+.button1:hover{
+	cursor:pointer;
+	width:70px;
+    height:25px;
+    background: #996699;
+    line-height: 24px;
+    border-radius: 8px;
+    box-shadow:  0 0 1px 1px rgba(0,0,0,0.5);
+}
+
+.button1 a{
+	width:70px;
+    height:24px;
+	padding:1px 1px;
+	font-family: 'Helvetica Neue',Helvetica,Arial,sans-serif;
+	font-size:20px;
+	font-weight: bold;
+	color: #fff;
+}
+
+i{
+  color:#fff;
+  position:relative;
+  bottom: 3px;
+}
+
+.button2{
+    margin-right: 40px;
+    width:120px;
+    height:30px;
+    background: #CC99CC;
+    line-height: 24px;
+    border-radius: 8px;
+    text-shadow: 0 2px 2px rgba(0,0,0,0.5);
+    outline:none;
+    font-family: 'Helvetica Neue',Helvetica,Arial,sans-serif;
+    font-size:20px;
+    font-weight: bold;
+    color: #fff;
+    float:right;
+}
+
+.button2:hover{
+    cursor:pointer;
+    background: #996699;
+    box-shadow:  0 0 1px 1px rgba(0,0,0,0.5);
+}
+
+/*热点话题*/
+.left{
+    float:left;
+    
+}
+
+.right{
+    float:right;
+   
+}
+
+.hoticon:hover .feedbox{
+    visibility:visible;
+}
+
+.hotnum{
+    border:#CC99CC 4px solid;
+    margin-top:2px;
+    font-weight:bold;
+    float:left;
+    width:80px;
+    color:#547bc9;
+    height:80px;
+    border-radius: 80px;
+    background-size: 80px 80px;
+}
+
+.feedbox{
+    visibility:hidden;
+    border-radius: 20px;
+    background-color: #CC99CC;
+    width:300px;
+    height:100px;
+    position:relative;
+    top:0px;
+    
+    margin:0px 0px;
+}
+
+#feedbox2{
+    left:100px;
+}
+
+.feedbox >p{
+    position: absolute;
+    margin:20px 20px;
+    overflow: hidden;
+}
+
+.feedbox >p >a{
+    color: #fff;
+    text-decoration: none;
+    font-size: 20px;
+    font-weight: bold;
+    word-break:break-all;
+}
+
+.feedbox >p >a:hover{
+    text-decoration:underline;
+}
+
+
+
+#hoticon2{
+   position: relative;
+   top:-80px;
+   /*left:760px;*/
+   right:360px;
+    width:84px;
+    padding:0px 0px;
+    margin-top:0px;
+}
+
+#num2{
+    background:url(../img/number/2.png);
+    background-size: 80px 80px;
+}
+
+.hoticon:hover #num2{
+   background: url(../img/dog/02.jpg);
+   background-size: 80px 80px;
+}
+
+#hoticon4{
+   position: relative;
+   top:-70px;
+   right:320px;
+    width:84px;
+    padding:0px 0px;
+    margin-top:0px;
+}
+
+#num4{
+    background:url(../img/number/4.png);
+    background-size: 80px 80px;
+}
+
+.hoticon:hover #num4{
+   background: url(../img/dog/04.jpg);
+   background-size: 80px 80px;
+}
+
+#hoticon6{
+   position: relative;
+   top:-70px;
+   right:370px;
+    width:84px;
+    padding:0px 0px;
+    margin-top:0px;
+}
+
+#num6{
+    background:url(../img/number/6.png);
+    background-size: 80px 80px;
+}
+
+.hoticon:hover #num6{
+   background: url(../img/dog/06.jpg);
+   background-size: 80px 80px;
+}
+
+
+#feedbox2::before{
+   content: ' '; 
+   height: 0; 
+   position: absolute; 
+   width: 0; 
+}
+
+#feedbox2::before {
+  position: absolute; 
+  left: -10%;
+  top: 30%;
+  border: 16px solid;
+  border-color:   transparent  #CC99CC transparent  transparent;
+}
+
+#feedbox1{
+    right:310px;
+}
+
+#hoticon1{
+   position: relative;
+   top:-80px;
+   left:360px;
+    width:84px;
+    padding:0px 0px;
+    margin-top:0px;
+}
+
+#num1{
+    background:url(../img/number/1.png);
+    background-size: 80px 80px;
+}
+.hoticon:hover #num1{
+   background: url(../img/dog/07.jpg);
+   background-size: 80px 80px;
+}
+
+#hoticon3{
+   position: relative;
+   top:-70px;
+   left:320px;
+    width:84px;
+    padding:0px 0px;
+    margin-top:0px;
+}
+
+#num3{
+    background:url(../img/number/3.png);
+    background-size: 80px 80px;
+}
+.hoticon:hover #num3{
+   background: url(../img/dog/03.jpg);
+   background-size: 80px 80px;
+}
+
+
+#hoticon5{
+   position: relative;
+   top:-70px;
+   left:370px;
+    width:84px;
+    padding:0px 0px;
+    margin-top:0px;
+}
+
+#num5{
+    background:url(../img/number/5.png);
+    background-size: 80px 80px;
+}
+.hoticon:hover #num5{
+   background: url(../img/dog/09.jpg);
+   background-size: 80px 80px;
+}
+
+
+#feedbox1::before{
+   content: ' '; 
+   height: 0; 
+   position: absolute; 
+   width: 0; 
+}
+
+#feedbox1::before {
+  position: absolute; 
+  right: -10%;
+  top: 30%;
+  border: 16px solid;
+  border-color:   transparent   transparent  transparent #CC99CC;
+}
+
+/*页脚*/
+.footer{
+    background:  #CC99CC;
+    border-radius: 5px;
+    text-align:center;
+    clear: both;
+    color:#fff;
+}
