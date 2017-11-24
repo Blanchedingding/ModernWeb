@@ -1,7 +1,6 @@
 window.onload = function(){
 	var loginerror=document.getElementById("loginerror");
 	if(loginerror!=null){
-			//alert("chucuo");
 			username.style.display="none";
 			confirmpw.style.display="none";
 			registerbutton.style.display="none";
@@ -19,11 +18,7 @@ window.onload = function(){
 			email.style.color="#999";
 		
 	}
-}
-
-window.onresize = function(){
-	
-}
+};
 
 /*登录表单*/
 var username=document.getElementById("username");
@@ -32,22 +27,22 @@ username.onfocus=function(){
 		this.value='';
 		this.style.color="#000";
 	}
-}
+};
 
 username.onmouseover=function(){
 	this.style.backgroundColor="#fff";;
-}
+};
 
 username.onmouseout=function(){
     this.style.backgroundColor="#EBD3E8";
-}
+};
 	
 username.onblur=function(){
 	if(this.value==""){
 		this.value="用户名";
 		this.style.color="#999";
 	}
-}
+};
 
 var email=document.getElementById("email");
 email.onfocus=function(){
@@ -55,22 +50,22 @@ email.onfocus=function(){
 		this.value='';
 		this.style.color="#000";
 	}
-}
+};
 
 email.onmouseover=function(){
 	this.style.backgroundColor="#FFFFFF";;
-}
+};
 
 email.onmouseout=function(){
     this.style.backgroundColor="#EBD3E8";
-}
+};
 	
 email.onblur=function(){
 	if(this.value==""){
 		this.value="邮箱";
 		this.style.color="#999";
 	}
-}
+};
 
 var pw=document.getElementById("pw");
 pw.onfocus=function(){
@@ -79,15 +74,15 @@ pw.onfocus=function(){
 		this.style.color="#000";
 		this.type="password";
 	}
-}
+};
 
 pw.onmouseover=function(){
 	this.style.backgroundColor="#fff";
-}
+};
 
 pw.onmouseout=function(){
     this.style.backgroundColor="#EBD3E8";
-}
+};
 	
 pw.onblur=function(){
 	if(this.value==""){
@@ -95,7 +90,7 @@ pw.onblur=function(){
 		this.style.color="#999";
 		this.type="text";
 	}
-}
+};
 
 var confirmpw=document.getElementById("confirmpw");
 confirmpw.onfocus=function(){
@@ -104,15 +99,15 @@ confirmpw.onfocus=function(){
 		this.style.color="#000";
 		this.type="password";
 	}
-}
+};
 
 confirmpw.onmouseover=function(){
 	this.style.backgroundColor="#fff";
-}
+};
 
 confirmpw.onmouseout=function(){
     this.style.backgroundColor="#EBD3E8";
-}
+};
 	
 confirmpw.onblur=function(){
 	if(this.value==""){
@@ -120,7 +115,7 @@ confirmpw.onblur=function(){
 		this.style.color="#999";
 		this.type="text";
 	}
-}
+};
 
 var tologin=document.getElementById("tologin");
 var loginbutton=document.getElementById("loginbutton");
@@ -251,7 +246,8 @@ tologin.onclick=function(){
 	email.style.color="#999";
 	//username.value="用户名";
 	//username.style.color="#999";
-}
+};
+
 /*点击注册跳转至注册表单*/
 toregister.onclick=function(){
 	tologin.style.display="block";
@@ -277,7 +273,7 @@ toregister.onclick=function(){
 	confirmpw.value="确认密码";
     confirmpw.style.color="#999";
     confirmpw.type="text";
-}
+};
 
 /*热点话题*/
 /*var num2= document.getElementById("num2");
