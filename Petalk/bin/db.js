@@ -1,5 +1,5 @@
 var mongoose = require('mongoose'),
-    DB_URL = 'mongodb://localhost:27017/mongoosesample';
+    DB_URL = 'mongodb://localhost:27017/petalk';
 
 /**
  * 连接

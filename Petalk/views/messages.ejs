@@ -1,0 +1,9 @@
+<div  id="login-message-div" style=" float:left; width:250px;margin-left: 10px;margin-top: 45px;">
+    <% if (locals.messages) { %>
+    <% messages.forEach(function(message) { %>
+    <p class='<%= message.type %>'><%= message.string %></p>
+    <% }) %>
+    <% removeMessages() %>
+    <% } %>
+</div>
+

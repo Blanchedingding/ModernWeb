@@ -4,44 +4,21 @@
     <title>个人页面</title>
     <link rel="stylesheet" type="text/css" href="font-awesome/css/font-awesome.css">
     <link rel="stylesheet" type="text/css" href="font-awesome/css/font-awesome.min.css">
-    <link rel="stylesheet" type="text/css" href="stylesheets/profile.css" media="only screen and (min-device-width : 768px)">
-    <script type="text/javascript" src="javascripts/profile.js" defer="defer" charset="utf-8"></script>
+    <link rel="stylesheet" type="text/css" href="stylesheets/header.css">
+    <link rel="stylesheet" type="text/css" href="stylesheets/profile-right.css">
+    <link rel="stylesheet" type="text/css" href="stylesheets/profile.css">
     <script src="javascripts/lib/jquery-2.1.3.min.js"></script>
+    <script type="text/javascript" src="javascripts/header.js" defer="defer" charset="utf-8"></script>
+    <script type="text/javascript" src="javascripts/profile.js" defer="defer" charset="utf-8"></script>
+
 </head>
 
 <body>
-<div class="nav">
-    <div class="nav-inner">
-        <img src="img/logo.png" class="logo">
-        <i class="fa fa-search fa-1x" style="color:#996699;z-index:2;position:relative;left:-380px;top:20px;"></i>
-        <input type="text" id="searchinput" value="搜索问题或用户">
-        <input type="submit" class="mybutton" id="searchbutton" value="提问题">
 
-        <div class="menubar">
-            <li class="menu"><a href="#">首页</a></li>
-            <li class="menu"><a href="#">话题</a></li>
-            <li class="menu"><a href="#">发现</a></li>
-        </div>
-
-        <div class="nav-user">
-            <a class="menu" href="#"><img src="img/user/user1.gif">
-                <a id="name" href="#">魅力兔斯基</a>
-            </a>
-            <ul class="submenubar">
-                <li><a href="#">
-                        <i class="fa fa-user fa-1x"></i>&nbsp&nbsp我的主页</a></li>
-                <li><a href="#">
-                        <i class="fa fa-envelope-o fa-1x"></i>&nbsp&nbsp私信</a></li>
-                <li><a href="#">
-                        <i class="fa fa-gear fa-1x"></i>&nbsp&nbsp设置</a></li>
-                <li><a href="#">
-                        <i class="fa fa-sign-out fa-1x"></i>&nbsp&nbsp退出</a></li>
-            </ul>
-        </div>
-    </div>
-</div>
+<%include header%>
 
 <div class="profilemain">
+
     <div class="profileleft">
         <ul class="profiletip">
             <li id="q" class="procheck active">提问</li>
@@ -90,35 +67,7 @@
     </div>
 
 
-    <div class="profileright">
-        <div id="warning">点击显示个人简介</div>
-        <img id="myicon" src="img/user/user1.gif">
-        <div id="aboutme">
-            <img src="img/number/close.png" id="closeicon">
-            <a class="myname">魅力兔斯基</a><br><br>
-            <a>吃吃吃吃吃吃吃，我就是个大吃货！</a>
-        </div>
-        <div class="attention">
-            <div class="attentionto">关注了<br>20人</div>
-            <div class="attentioned">关注者<br>100人</div>
-        </div>
-        <hr>
-        <div class="recentto">
-            <h3>最近关注了</h3>
-            <a href="#"><img src="img/user/user2.jpg"></a>
-            <a href="#"><img src="img/user/user3.jpg"></a>
-            <a href="#"><img src="img/user/user4.jpg"></a>
-        </div>
-
-        <hr>
-        <div class="recented">
-            <h3>最近被他们关注</h3>
-            <a href="#"><img src="img/user/user5.jpg"></a>
-            <a href="#"><img src="img/user/user6.jpg"></a>
-            <a href="#"><img src="img/user/user7.jpg"></a>
-            <a href="#"><img src="img/user/user8.jpg"></a>
-        </div>
-    </div>
+    <%include profile-right%>
 
 </div>
 

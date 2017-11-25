@@ -1,0 +1,172 @@
+/*右侧个人信息、简介和关注头像*/
+.profilemain{
+    width:1200px;
+    min-width: 1200px;
+    margin:auto;
+    font-family: "微软雅黑";
+}
+
+.profileright{
+    border-left: solid 2px #EBD3E8;
+    margin-top: 10px;
+    float:right;
+    width:300px;
+    list-style-type:none;
+    color:#660066;
+    margin-right: 50px;
+
+}
+
+.profileright>img{
+    margin-left: 100px;
+    margin-top: 0px;
+    width:100px;
+    height:100px;
+    cursor: pointer;
+}
+
+#warning{
+    visibility: hidden;
+    padding:5px 5px;
+    width:50px;
+    height:30px;
+    border-radius: 3px;
+    position:relative;
+    font-size: 12px;
+    border:1px #CC99CC;
+    top:40px;
+    left:40px;
+    z-index: 2;
+    background-color: #EBD3E8;
+}
+
+#aboutme{
+    background-color:#EBD3E8;
+    display:none;
+    padding:10px 10px 20px;
+    margin:0px auto;
+    width:200px;
+    height:80px;
+    font-size: 18px;
+    border-radius: 5px;
+    z-index: 3;
+    text-align: center;
+}
+
+#closeicon{
+    float:right;
+    background: #CC99CC;
+    border-radius: 20px;
+    padding:4px 4px;
+    margin-top:-15px;
+    margin-right:-15px;
+    width:15px;
+    height:15px;
+}
+
+#closeicon:hover{
+    cursor: pointer;
+    box-shadow: 0 0 1px 1px rgba(0,0,0,0.5);
+}
+
+.myname{
+    /*float:left;*/
+    /*margin-left:50%;*/
+    font-weight: bold;
+    margin:0px auto;
+    margin-bottom: 5px;
+
+}
+
+#aboutme::before,
+#aboutme::after {
+    content: ' ';
+    height: 0;
+    position: absolute;
+    width: 0;
+}
+
+#aboutme::before {
+    position: relative;
+    left: 80px;
+    top: -40px;
+    border: 14px solid;
+    border-color:  transparent transparent #EBD3E8 transparent;
+}
+
+/*编辑头像和简介*/
+.edit-div{
+    margin-top: 30px;
+    clear:both;
+    padding-bottom: 20px;
+    text-align: center;
+}
+
+#photo-form{
+    float:left;
+    margin-left: 30px;
+    text-align: center;
+    margin-bottom: 20px;
+
+}
+
+#change-intro{
+    float:right;
+    margin-right: 30px;
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+#intro-text{
+    margin: 0 auto;
+    display: none;
+    clear: both;
+    background-color: #EBD3E8;
+    border-radius: 8px;
+    width: 220px;
+    outline: none;
+    color: #000;
+    font-size: 15px;
+    resize: none;
+    padding: 10px 10px;
+}
+
+/*.attention{*/
+    /*margin-top: 30px;*/
+    /*clear:both;*/
+    /*padding-bottom: 20px;*/
+/*}*/
+
+/*.attentionto{*/
+    /*float:left;*/
+    /*margin-left: 70px;*/
+    /*text-align: center;*/
+/*}*/
+
+/*.attentioned{*/
+    /*float:right;*/
+    /*margin-right: 60px;*/
+    /*text-align: center;*/
+/*}*/
+
+/*.recentto{*/
+    /*margin-top: 20px;*/
+    /*margin-left: 30px;*/
+/*}*/
+
+/*.recentto img{*/
+    /*width:50px;*/
+    /*height:50px;*/
+    /*margin:5px 5px;*/
+/*}*/
+
+/*.recented{*/
+    /*margin-left: 30px;*/
+    /*margin-bottom: 20px;*/
+/*}*/
+
+/*.recented img{*/
+    /*width:50px;*/
+    /*height:50px;*/
+    /*margin:5px 5px;*/
+/*}*/

@@ -2,7 +2,6 @@
  * Created by lenovo on 2017/11/23.
  */
 window.onload = function(){
-
     //设置文件上传的按钮
     $('#pict').on('click', function() {
         $('#file').trigger('click');
