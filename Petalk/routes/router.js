@@ -8,7 +8,7 @@ var path = require('path');
 router.get('/', function(req, res, next) {
   res.render('login');
 });
-router.post('/login', userCtrl.login, topicCtrl.listQuestionsByUser);
+router.post('/login', userCtrl.login, topicCtrl.listQuestionsByHot);
 router.get('/logout', userCtrl.logout);
 router.post('/changeIntro', userCtrl.changeIntro,topicCtrl.listQuestionsByUser);
 router.get('/profile', topicCtrl.listQuestionsByUser);
