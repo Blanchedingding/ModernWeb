@@ -10,6 +10,7 @@
     <link rel="stylesheet" type="text/css" href="stylesheets/topic-right.css">
     <script src="javascripts/lib/jquery-2.1.3.min.js" charset="utf-8"></script>
     <script  src="javascripts/lib/bootstrap.js"></script>
+    <script type="text/javascript" src="javascripts/sidebar.js" defer="defer" charset="utf-8"></script>
     <script type="text/javascript" src="javascripts/header.js" defer="defer" charset="utf-8"></script>
     <script type="text/javascript" src="javascripts/topic.js" defer="defer" charset="utf-8"></script>
 </head>
@@ -25,9 +26,9 @@
     <div class="questionleft">
         <div class="questiondiv">
             <div class="question"><%=question.quescontent%></div>
-            <div class="questionperson">
-                <a href="#" class="questionname"><%=question.user.username%></a>
-                <span class="quesdesc"><%=question.quesdesc%></span>
+            <div class="quesdesc"><%=question.quesdesc%></div>
+            <div class="questionperson" >
+                <a class="questionname"><%=question.user.username%></a>
                 <span class="time">提问于 <%=question.questime%></span>
                 <hr>
             </div>
@@ -39,7 +40,6 @@
                     <a href="#"><img src="<%=answer.user.usericon%>"></a>
                     <div class="answerperson">
                         <a class="answername" ><%=answer.user.username%></a>
-
                         <span class="answerintroduction">&nbsp&nbsp&nbsp<%=answer.user.briefintro%></span>
                     </div>
                     <div class="answercontent">
@@ -59,6 +59,7 @@
                         <div class="mycomment">
                             <input type="text" id="mycommentcontent">
                             <input type="text" style="display: none" id="ansid" value="<%=answer._id%>">
+                            <input type="text" style="display: none" id="comnum" value="<%=answer.comnum%>">
                             <input type="submit" class="mybutton submitcomment" id="submitcomment" value="发表评论">
                         </div>
                     </div><!--comment end-->

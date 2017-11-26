@@ -28,8 +28,10 @@ for(var i = 0; i < coms.length; i++) {
                     withCredentials: true
                 },
                 success: function (result) {
+                    comdiv.find('#comment-div').html("");
                     for(var j = 0; result && result.comments && j < result.comments.length; j++){
-                        comdiv.find('#comment-div').append(appendCom(result.comments[j]))
+                        comdiv.find('#comment-div').append(appendCom(result.comments[j]));
+
                     }
                 }
             });
@@ -57,6 +59,8 @@ for(var k = 0; k < subcoms.length; k++){
     subcoms[k].onclick = function(){
         var content = $(this).parent('.mycomment').find('#mycommentcontent').val();
         var commentDiv = $(this).parents('#comment').find('#comment-div');
+        var comnum = $(this).parents('.answer').find('.commentlabel');
+        var num = parseInt($(this).parents('.mycomment').find('#comnum').val());
         if(content && content.length > 1){
             var data = new Object();
             data.comcontent = content;
@@ -72,10 +76,10 @@ for(var k = 0; k < subcoms.length; k++){
                     withCredentials: true
                 },
                 success: function (result) {
-                    // console.log(result);
                     if(result){
-                        console.log(result);
                         commentDiv.append(appendCom(result));
+                        console.log(num);
+                        comnum.text("评论("+ (num+1) +")")
                     }
                 }
             });

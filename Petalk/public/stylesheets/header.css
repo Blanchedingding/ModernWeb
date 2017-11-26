@@ -193,7 +193,7 @@ http://stackoverflow.com/questions/9450733/css-triangle-custom-border-color
 #questiontitle, #questiondesc{
     margin: 0 auto;
     clear: both;
-    background-color: #EBD3E8;
+    /*background-color: #EBD3E8;*/
     border-radius: 8px;
     width: 550px;
     outline: none;

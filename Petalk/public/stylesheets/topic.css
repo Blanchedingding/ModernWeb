@@ -59,15 +59,14 @@ a{
     box-shadow:  0 0 1px 1px rgba(0,0,0,0.5);
 }
 
-
-
 /*左边的问题及回答区域*/
 .questionleft{
   float:left;
-  width:850px;
+  width:750px;
   color:#660066;
   margin-top:30px;
   margin-bottom: 50px;
+    margin-left: 30px;
 }
 
 .question{
@@ -93,9 +92,10 @@ a{
 
 .quesdesc{
     color:#CC99CC;
-    margin-bottom: 10px;
-    font-size: 15px;
+    margin-bottom: 20px;
+    font-size: 16px;
     color:#996699;
+    text-indent: 2em;
 }
 
 .answer{
@@ -121,6 +121,8 @@ a{
 .answername{
   font-weight: bold;
   cursor: pointer;
+    font-size: 16px;
+    font-weight: bold;
 }
 
 .answername:hover{
@@ -134,11 +136,12 @@ a{
 }
 
 .answercontent{
-  margin-top: 20px;
-  margin-left: 10px;
+  margin-top: 10px;
+  margin-left: 50px;
   margin-right: 20px;
-  margin-bottom: 20px;
+  margin-bottom: 10px;
   word-break:break-all;
+    font-size: 16px;
 }
 
 .afteranswer{
@@ -164,7 +167,7 @@ a{
   display: none;
   position:relative;
   top:30px;
-  width:800px;
+  /*width:800px;*/
   border-radius: 8px;
   border:1px solid #CC99CC;
   margin-left:30px;
@@ -231,11 +234,11 @@ a{
 }
 
 #mycommentcontent{
-  background-color: #EBD3E8;
+  /*background-color: #EBD3E8;*/
   color:#660066;
   margin-left:20px;
   border-radius: 8px;
-  width:750px;
+  width:650px;
   height:30px;
   outline:none;
 }
@@ -243,7 +246,7 @@ a{
 #submitcomment{
   width:100px;
   height:30px;
-  margin-left: 670px;
+  margin-left: 550px;
   margin-top: 10px;
 }
 
@@ -262,7 +265,7 @@ a{
 #myanswercontent{
   border-radius: 8px;
   outline:none;
-  width:800px;
+  width:700px;
   height:100px;
   font-size: 16px;
   resize:none;

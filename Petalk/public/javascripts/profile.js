@@ -1,20 +1,5 @@
 
 
-
-/*选项卡*/
-// $(function partA() {
-//     var $div_li=$("div.profileleft>ul li");
-//     $div_li.click(function(){
-//         $(this).addClass("check active")
-//                .siblings().removeClass("check active");
-//
-//         var index=$div_li.index(this);
-//         $("div.profilecontent div")
-//                .eq(index).show()
-//                .siblings().hide();
-//     });
-// });
-
 /*点击用户头像展开简介*/
 var myicon=document.getElementById("myicon");
 var warning=document.getElementById("warning");

@@ -19,10 +19,13 @@ router.post(
     validate.checkPw('password','confirmpw'),
     userCtrl.register
 );
-router.post('/saveQuestion',topicCtrl.addQuestion, topicCtrl.listQuestionsByUser);
-router.get('/topic',topicCtrl.listQuestionById);
-router.post('/addAnswer',topicCtrl.addAnswer,topicCtrl.listQuestionById);
-router.post('/addComment',topicCtrl.addComment);
-router.post('/listCommentByAns',topicCtrl.listCommentsByAnswerId);
+
+router.get('/hotTopics', topicCtrl.listQuestionsByHot);
+router.get('/getSideLists', topicCtrl.getSideLists);
+router.post('/saveTopic',topicCtrl.addQuestion, topicCtrl.listQuestionsByUser);
+router.get('/topic', topicCtrl.listQuestionById);
+router.post('/addAnswer',topicCtrl.addAnswer,topicCtrl.listQuestionById );
+router.post('/addComment', topicCtrl.addComment);
+router.post('/listCommentByAns', topicCtrl.listCommentsByAnswerId);
 
 module.exports = router;

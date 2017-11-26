@@ -2,14 +2,17 @@
 <head>
     <meta charset="UTF-8">
     <title>话题</title>
+    <link rel="stylesheet" type="text/css" href="stylesheets/lib/bootstrap.css">
     <link rel="stylesheet" type="text/css" href="font-awesome/css/font-awesome.css">
     <link rel="stylesheet" type="text/css" href="font-awesome/css/font-awesome.min.css">
     <link rel="stylesheet" type="text/css" href="stylesheets/header.css">
-    <link rel="stylesheet" type="text/css" href="stylesheets/question.css">
-    <link rel="stylesheet" type="text/css" href="stylesheets/question-right.css">
-    <script type="text/javascript" src="javascripts/lib/jquery-2.1.3.min.js" defer="defer" charset="utf-8"></script>
+    <link rel="stylesheet" type="text/css" href="stylesheets/topic.css">
+    <link rel="stylesheet" type="text/css" href="stylesheets/topic-right.css">
+    <script src="javascripts/lib/jquery-2.1.3.min.js" charset="utf-8"></script>
+    <script src="javascripts/lib/bootstrap.js"></script>
+    <script type="text/javascript" src="javascripts/sidebar.js" defer="defer" charset="utf-8"></script>
     <script type="text/javascript" src="javascripts/header.js" defer="defer" charset="utf-8"></script>
-    <script type="text/javascript" src="javascripts/question.js" defer="defer" charset="utf-8"></script>
+    <script type="text/javascript" src="javascripts/topic.js" defer="defer" charset="utf-8"></script>
 </head>
 
 <body>
@@ -18,89 +21,21 @@
 
 <div class="questionmain">
 
-    <!--<%=locals.session.user%>-->
-
     <div class="questionleft">
-        <div class="questiondiv">
-            <div class="question">什么时候你会觉得自己养宠物是个错误的决定？</div>
-            <div class="questionperson">
-                <a href="#" class="questionname">樱桃小丸子</a>
-                <a class="time">提问于 2015-05-01 23:31</a>
-                <hr>
+        <ul class="myquestion">
+            <% if(questions){
+            questions.forEach(function(q){%>
+            <div style="margin-bottom: 30px">
+                <li style="font-size: 19px;font-weight: bold;list-style: square inside url('img/star.png')"><a href="/topic?id=<%=q._id%>"><%=q.quescontent%></a></li>
+                <p style="color:#CC99CC; text-align: right"><a><%=q.user.username%>&nbsp&nbsp</a><span class="questime">提问于 <%=q.questime%></span></p>
             </div>
-        </div><!--questiondiv end-->
-        <div class="answer">
-            <a href="#"><img src="img/user/user5.jpg"></a>
-            <div class="answerperson">
-                <a class="answername" herf="#">喵喵</a>
-                <a class="answerintroduction">&nbsp&nbsp&nbsp我很荣幸，作为一只小懒猫</a>
-            </div>
-            <div class="answercontent">
-                当你发现他们一天天老去，意识到他们的生命在一点一点逝去，总有一天会在你眼前死去。宠物的寿命本来就比人更短，失去他们的时候会后悔，会心痛。
-            </div>
-            <div class="afteranswer">
-                <a id="commentlabel" href="#">评论(3)</a>
-                <a class="time">2015-05-02 8:00</a>
-            </div><!--afteranswer end-->
-            <div id="comment">
-                <div class="commenttip">
-                    <a href="#"><img src="img/user/user6.jpg"></a>
-                    <a class="commentname" herf="#">cup dog</a><br>
-                    <div class="commetcontent">深有同感~~</div>
-                    <a class="commenttime">2015-05-02 8:30</a>
-                    <hr>
-                </div>
-
-                <div class="commenttip">
-                    <a href="#"><img src="img/user/user7.jpg"></a>
-                    <a class="commentname" herf="#">玉面狐狸</a><br>
-                    <div class="commetcontent">养乌龟啊！乌龟长寿的啊！</div>
-                    <a class="commenttime">2015-05-02 9:00</a>
-                    <hr>
-                </div>
-
-                <div class="commenttip">
-                    <a href="#"><img src="img/user/user8.jpg"></a>
-                    <a class="commentname" herf="#">俊介小女友</a><br>
-                    <div class="commetcontent">楼上走远点!</div>
-                    <a class="commenttime">2015-05-02 9:05</a>
-                    <hr>
-                </div>
-
-                <div class="mycomment">
-                    <input type="text" id="mycommentcontent">
-                    <input type="submit" class="mybutton" id="submitcomment" value="发表评论">
-                </div>
-            </div><!--comment end-->
-        </div><!--answer end-->
-        <hr>
-        <div class="answer">
-            <a href="#"><img src="img/user/user9.jpg"></a>
-            <div class="answerperson">
-                <a class="answername" herf="#">蠢萌大可爱</a>
-                <a class="answerintroduction">
-                    &nbsp&nbsp&nbsp是的，我养了一只愚蠢的萨摩耶</a>
-            </div>
-            <div class="answercontent">
-                当你拖着疲倦的身体回到家时看见下面的场景，我肯定你会觉得现在流的泪就是你当初决定养他时脑子里进的水。。。。。。<br>
-                <img src="img/dog/baddog.jpg">
-            </div>
-            <div class="afteranswer">
-                <a id="commentlabel" href="#">评论(6)</a>
-                <a class="time">2015-05-02 21:23</a>
-            </div><!--afteranswer2 end-->
-        </div><!--answer2 end-->
-        <hr>
-
-        <form id="myanswer"  method="post"  action="#" >
-            <textarea id="myanswercontent"></textarea><br>
-            &nbsp&nbsp&nbsp&nbsp<a href="#"><i class="fa fa-picture-o fa-2x" style="color:#CC99CC"></i></a>
-            <input type="submit" class="mybutton" id="submitanswer" value="发布回答">
-        </form>
+            <%})
+            }%>
+        </ul>
 
     </div><!--profileleft end-->
 
-   <% include question-right%>
+   <% include topic-right%>
 
 </div>
 </body>

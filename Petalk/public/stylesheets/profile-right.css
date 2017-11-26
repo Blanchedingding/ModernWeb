@@ -46,7 +46,7 @@
     padding:10px 10px 20px;
     margin:0px auto;
     width:200px;
-    height:80px;
+    /*height:80px;*/
     font-size: 18px;
     border-radius: 5px;
     z-index: 3;
@@ -132,7 +132,7 @@
     width: 220px;
     outline: none;
     color: #000;
-    font-size: 18px;
+    /*font-size: 18px;*/
     resize: none;
     padding: 10px 10px;
     margin-bottom: 10px;
