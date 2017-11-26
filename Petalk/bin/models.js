@@ -13,35 +13,67 @@ var UserSchema = new Schema({
 });
 
 var User = mongoose.model('User', UserSchema);
-
 module.exports.User = User;
 
-// function User( username, email, password, usericon, briefintro, fan, likes){
-//     this.username = username;
-//     this.email = email;
-//     this.password = password;
-//     this.usericon = usericon;
-//     this.briefintro = briefintro;
-//     this.fan = fan;
-//     this.likes = likes;
-// }
-//
-//
-// var user = new User();
-// user.username = 'ding';
-// user.email = '2@fudan.edu.cn';
-// user.briefintro = '';
-// user.password = '12345';
-// user.fan = 0;
-// user.likes = 0;
-// user.usericon = 'user1.gif';
-// user.save(function(err) {
-//     if (err) throw err;
-//     console.log('Task saved.');
-// });
+var QuestionSchema = new Schema({
+    user:{
+        _id:String,
+        username:String,
+        email:String,
+        password:String,
+        salt:String,
+        usericon:String,
+        briefintro:String,
+        fan:Number,
+        likes:Number
+    },
+    quescontent:String,
+    quesdesc:String,
+    ansnum:Number,
+    questime:String
+});
 
-// User.find({email:'1@fudan.edu.cn'}, 'name email', function(err, user){
-//     console.log(err);
-//     console.log(user);
-// });
+var Question = mongoose.model('Question', QuestionSchema);
+module.exports.Question = Question;
+
+var AnswerSchema = new Schema({
+    user:{
+        _id:String,
+        username:String,
+        email:String,
+        password:String,
+        salt:String,
+        usericon:String,
+        briefintro:String,
+        fan:Number,
+        likes:Number
+    },
+    quesid:String,
+    anscontent:String,
+    comnum:Number,
+    anstime:String
+});
+var Answer = mongoose.model('Answer', AnswerSchema);
+module.exports.Answer = Answer;
+
+var CommentSchema = new Schema({
+    user:{
+        _id:String,
+        username:String,
+        email:String,
+        password:String,
+        salt:String,
+        usericon:String,
+        briefintro:String,
+        fan:Number,
+        likes:Number
+    },
+    ansid:String,
+    comcontent:String,
+    comtime:String
+});
+var Comment = mongoose.model('Comment', CommentSchema);
+module.exports.Comment = Comment;
+
+
 

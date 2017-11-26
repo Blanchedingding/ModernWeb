@@ -2,18 +2,18 @@
 
 
 /*选项卡*/
-$(function partA() {
-    var $div_li=$("div.profileleft>ul li");
-    $div_li.click(function(){
-        $(this).addClass("check active")
-               .siblings().removeClass("check active");
-
-        var index=$div_li.index(this);
-        $("div.profilecontent div")
-               .eq(index).show()
-               .siblings().hide();
-    });
-});
+// $(function partA() {
+//     var $div_li=$("div.profileleft>ul li");
+//     $div_li.click(function(){
+//         $(this).addClass("check active")
+//                .siblings().removeClass("check active");
+//
+//         var index=$div_li.index(this);
+//         $("div.profilecontent div")
+//                .eq(index).show()
+//                .siblings().hide();
+//     });
+// });
 
 /*点击用户头像展开简介*/
 var myicon=document.getElementById("myicon");
@@ -67,7 +67,7 @@ $('#photo').on('change', function(){
 
 /*修改简介*/
 $('#change-intro').on('click', function(){
-    $('#intro-text').css('display', 'block');
+    $('#intro-form').css('display', 'block');
 
 });
 
@@ -77,4 +77,17 @@ $('#intro-text').on('focus', function(){
 
 $('#intro-text').on('blur', function(){
     $('#intro-text').css('background-color', '#EBD3E8');
+});
+
+$('#change-intro-cancel').on('click', function(){
+    $('#intro-form').css('display', 'none');
+    $('#intro-text').val("");
+});
+
+$('#change-intro-confirm').on('click', function(){
+   if($('#intro-text').val() && $('#intro-text').val().length > 1){
+       $('#intro-form').submit();
+
+
+   }
 });

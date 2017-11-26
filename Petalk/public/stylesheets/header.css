@@ -20,7 +20,7 @@
     height: 28px;
     width:200px;
     outline:none;
-    margin:10px 0px 10px 30px;
+    margin:15px 0px 10px 30px;
     color:#999;
     font-size: 15px;
     padding-right: 40px;
@@ -67,6 +67,7 @@
 .menu:hover {
     background-color:#996699;
     height:60px;
+    color: #FFFFFF;
 }
 /*用户头像名字*/
 .nav-user{
@@ -186,4 +187,23 @@ http://stackoverflow.com/questions/9450733/css-triangle-custom-border-color
     top: -37%;
     border: 13px solid;
     border-color: transparent transparent #fff transparent;
+}
+
+/*提问模态框*/
+#questiontitle, #questiondesc{
+    margin: 0 auto;
+    clear: both;
+    background-color: #EBD3E8;
+    border-radius: 8px;
+    width: 550px;
+    outline: none;
+    color: #000;
+    font-size: 16px;
+    resize: none;
+    padding: 10px 10px;
+    margin-bottom: 10px;
+}
+
+#questiontitle:hover, #questiondesc:hover{
+    background-color: #FFFFFF;
 }

@@ -15,6 +15,15 @@ img:hover{
   box-shadow: 0 0 1px 1px rgba(0,0,0,0.5);
 }
 
+a:hover{
+    text-decoration: none;
+    color:orange;;
+}
+
+a{
+    color:#660066;
+}
+
 .nav {
    top:0;
    height:60px; 
@@ -79,7 +88,14 @@ img:hover{
    color:#CC99CC;
    text-decoration: none;
    margin-bottom: 20px;
-   font-size: 15px;
+   font-size: 13px;
+}
+
+.quesdesc{
+    color:#CC99CC;
+    margin-bottom: 10px;
+    font-size: 15px;
+    color:#996699;
 }
 
 .answer{
@@ -211,7 +227,7 @@ img:hover{
 .commenttime{
   margin-left: 60px;
   color:#CC99CC;
-  font-size: 15px;
+  font-size: 13px;
 }
 
 #mycommentcontent{
@@ -247,9 +263,10 @@ img:hover{
   border-radius: 8px;
   outline:none;
   width:800px;
-  height:150px;
-  font-size: 20px;
+  height:100px;
+  font-size: 16px;
   resize:none;
+    padding:10px;
 }
 
 #myanswercontent:hover{

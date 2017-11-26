@@ -28,11 +28,11 @@
 #warning{
     visibility: hidden;
     padding:5px 5px;
-    width:50px;
-    height:30px;
+    width:60px;
+    height:40px;
     border-radius: 3px;
     position:relative;
-    font-size: 12px;
+    font-size: 11px;
     border:1px #CC99CC;
     top:40px;
     left:40px;
@@ -88,7 +88,7 @@
 
 #aboutme::before {
     position: relative;
-    left: 80px;
+    left: 70px;
     top: -40px;
     border: 14px solid;
     border-color:  transparent transparent #EBD3E8 transparent;
@@ -110,7 +110,14 @@
 
 }
 
-#change-intro{
+#change-intro-confirm{
+    float:left;
+    margin-left: 30px;
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+#change-intro, #change-intro-cancel{
     float:right;
     margin-right: 30px;
     text-align: center;
@@ -119,54 +126,54 @@
 
 #intro-text{
     margin: 0 auto;
-    display: none;
     clear: both;
-    background-color: #EBD3E8;
+    /*background-color: #EBD3E8;*/
     border-radius: 8px;
     width: 220px;
     outline: none;
     color: #000;
-    font-size: 15px;
+    font-size: 18px;
     resize: none;
     padding: 10px 10px;
+    margin-bottom: 10px;
 }
 
-/*.attention{*/
-    /*margin-top: 30px;*/
-    /*clear:both;*/
-    /*padding-bottom: 20px;*/
-/*}*/
+.attention{
+    margin-top: 30px;
+    clear:both;
+    padding-bottom: 20px;
+}
 
-/*.attentionto{*/
-    /*float:left;*/
-    /*margin-left: 70px;*/
-    /*text-align: center;*/
-/*}*/
+.attentionto{
+    float:left;
+    margin-left: 70px;
+    text-align: center;
+}
 
-/*.attentioned{*/
-    /*float:right;*/
-    /*margin-right: 60px;*/
-    /*text-align: center;*/
-/*}*/
+.attentioned{
+    float:right;
+    margin-right: 60px;
+    text-align: center;
+}
 
-/*.recentto{*/
-    /*margin-top: 20px;*/
-    /*margin-left: 30px;*/
-/*}*/
+.recentto{
+    margin-top: 20px;
+    margin-left: 30px;
+}
 
-/*.recentto img{*/
-    /*width:50px;*/
-    /*height:50px;*/
-    /*margin:5px 5px;*/
-/*}*/
+.recentto img{
+    width:50px;
+    height:50px;
+    margin:5px 5px;
+}
 
-/*.recented{*/
-    /*margin-left: 30px;*/
-    /*margin-bottom: 20px;*/
-/*}*/
+.recented{
+    margin-left: 30px;
+    margin-bottom: 20px;
+}
 
-/*.recented img{*/
-    /*width:50px;*/
-    /*height:50px;*/
-    /*margin:5px 5px;*/
-/*}*/
+.recented img{
+    width:50px;
+    height:50px;
+    margin:5px 5px;
+}

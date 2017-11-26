@@ -8,3 +8,18 @@ searchinput.onfocus=function(){
         this.style.color="#000";
     }
 };
+
+searchinput.onblur=function(){
+    this.value='搜索问题或用户';
+    this.style.color="#999";
+};
+
+function saveque(){
+    var title = $('#questiontitle').val();
+    var content = $('#questiondesc').val();
+    if(title && title.length > 1){
+        $('#submitquestionform').submit();
+    } else{
+        alert("问题标题不能为空哦！");
+    }
+}

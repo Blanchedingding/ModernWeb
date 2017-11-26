@@ -52,7 +52,8 @@ module.exports.login = function(req, res, next){
             if(bcrypt.compareSync(req.body.password, user.password)){
                 user.password = '';
                 req.session.user = user;
-                return res.render('profile');
+                res.redirect('/profile');
+                // next();
             } else {
                 res.error("密码不正确！", 'loginError');
                 res.redirect('back');
@@ -84,14 +85,28 @@ module.exports.changeIcon = function (dir) {
             User.update({_id:req.session.user._id},{usericon:'photos/'+ newName},function(err, user){
                 if (err) return next(err);
                 req.session.user.usericon = 'photos/'+ newName;
-                return res.render('profile');
+                res.redirect('/profile');
+                // next();
             });
         });
-
-        // fs.rename(img.path, path, function(err){
-        //     if (err) return next(err);
-        //
-        // });
     };
+};
+
+module.exports.changeIntro = function(req, res, next){
+    User.findOne({_id:req.session.user._id}, function(err, user){
+        console.log(req.body);
+        if(!user){
+            res.redirect('back');
+        } else if (err) {
+            return next(err);
+        } else {
+            User.update({_id:req.session.user._id},{briefintro:req.body.introText},function(err, user){
+                if (err) return next(err);
+                req.session.user.briefintro = req.body.introText;
+                res.redirect('/profile');
+                // next();
+            });
+        }
+    });
 };
 
