@@ -1,12 +1,4 @@
 /*右侧热点问题和用户*/
-.questionmain{
-    width:1200px;
-    min-width: 1200px;
-    margin:auto;
-    font-family: "微软雅黑";
-    color:#660066;
-}
-
 .questionright{
     float:right;
     width:300px;

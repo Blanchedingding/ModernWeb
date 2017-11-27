@@ -1,0 +1,23 @@
+.cloudmain{
+    width:1200px;
+    min-width: 1200px;
+    margin:auto;
+    font-family: "微软雅黑";
+    color:#660066;
+}
+
+.cloudleft{
+    float:left;
+    width:750px;
+    color:#660066;
+    margin-top:30px;
+    margin-bottom: 50px;
+    margin-left: 20px;
+}
+
+.cloudright{
+    float:right;
+    width:300px;
+    list-style-type:none;
+    color:#660066;
+}

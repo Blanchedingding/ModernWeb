@@ -72,12 +72,10 @@ module.exports.logout = function(req, res){
 
 module.exports.changeIcon = function (dir) {
     return function(req, res, next){
-        // console.log(req.files);
         var img = req.files.photo;
         var imgType= img.name.substr(img.name.lastIndexOf("."));
         var newName = req.session.user._id + imgType;
         var path = join(dir, newName);
-
         var readStream=fs.createReadStream(img.path);
         var writeStream=fs.createWriteStream(path);
         readStream.pipe(writeStream);
@@ -95,7 +93,6 @@ module.exports.changeIcon = function (dir) {
 
 module.exports.changeIntro = function(req, res, next){
     User.findOne({_id:req.session.user._id}, function(err, user){
-        console.log(req.body);
         if(!user){
             res.redirect('back');
         } else if (err) {
@@ -105,7 +102,6 @@ module.exports.changeIntro = function(req, res, next){
                 if (err) return next(err);
                 req.session.user.briefintro = req.body.introText;
                 res.redirect('/profile');
-                // next();
             });
         }
     });

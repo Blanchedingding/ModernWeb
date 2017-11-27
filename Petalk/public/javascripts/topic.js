@@ -57,13 +57,13 @@ function appendCom(com){
 var subcoms = $('.submitcomment');
 for(var k = 0; k < subcoms.length; k++){
     subcoms[k].onclick = function(){
-        var content = $(this).parent('.mycomment').find('#mycommentcontent').val();
+        var content = $(this).parent('.mycomment').find('#mycommentcontent');
         var commentDiv = $(this).parents('#comment').find('#comment-div');
         var comnum = $(this).parents('.answer').find('.commentlabel');
         var num = parseInt($(this).parents('.mycomment').find('#comnum').val());
-        if(content && content.length > 1){
+        if(content.val() && content.val().length > 1){
             var data = new Object();
-            data.comcontent = content;
+            data.comcontent = content.val();
             data.ansid = $(this).parent('.mycomment').find('#ansid').val();
             // console.log(data);
             $.ajax({
@@ -78,8 +78,9 @@ for(var k = 0; k < subcoms.length; k++){
                 success: function (result) {
                     if(result){
                         commentDiv.append(appendCom(result));
-                        console.log(num);
-                        comnum.text("评论("+ (num+1) +")")
+                        // console.log(num);
+                        comnum.text("评论("+ (num+1) +")");
+                        content.val("");
                     }
                 }
             });

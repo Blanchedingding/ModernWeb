@@ -1,8 +1,144 @@
-body {
-  padding: 50px;
-  font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
+/*全局样式*/
+
+* {
+  margin: 0;
+  padding: 0;
 }
 
 a {
-  color: #00B7FF;
+  text-decoration: none;
+}
+
+body {
+  line-height: 1;
+  background: #FFF;
+}
+
+body {
+  font-family: "Microsoft Yahei";
+  background: #f4f4f4;
+  min-width: 1000px;
+  height: 100%;
+}
+/*主体居中*/
+
+.container {
+  width: 98%;
+  position: relative;
+  margin-bottom: 20px;
+  margin: 0 auto;
+}
+
+#photo-box .photo {
+  display: block;
+  /*float: left;*/
+  width: 225px;
+  background-color: #fff;
+  overflow: hidden;
+  position: absolute;
+  -webkit-transition: .3s ease-in-out;
+  -o-transition: .3s ease-in-out;
+  transition: .3s ease-in-out;
+  border: 1px solid #e2e2e2;
+}
+
+#photo-box .photo .content {
+  margin: 0 10px;
+  font-size: 14px;
+  color: #777;
+  line-height: 20px;
+  word-break: break-all;
+}
+/*显示加载*/
+
+#load-over {
+  width: 95%;
+  margin: 0 auto;
+  border-bottom: 1px #ccc solid;
+  border-top: 1px #ccc solid;
+  padding: 20px 0px;
+  text-align: center;
+  margin-bottom: 30px;
+  color: #999;
+}
+/*弹出播放页面样式*/
+
+.mask {
+  z-index: 999;
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(229, 229, 229, .95);
+  overflow: auto;
+  padding-top: 30px;
+}
+
+.mask .close-layer {
+  width: 56px;
+  height: 56px;
+  position: fixed;
+  right: 14px;
+  top: 0;
+  cursor: pointer;
+  z-index: 99995;
+}
+
+.mask .close-layer i {
+  background: url(/static/img/btn_close_layer.png) 0 0 no-repeat;
+  width: 36px;
+  height: 36px;
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  margin: -18px 0 0 -18px;
+}
+
+.pin-view-wrapper {
+  width: 84%;
+  margin: 0 auto;
+  position: relative;
+}
+
+.pin-view-wrapper>.main-part,
+.pin-view-wrapper>.side-part {
+  background-color: #fff;
+  display: block;
+  width: 100%;
+}
+
+.pin-view-wrapper>.main-part {}
+
+.pin-view-wrapper>.side-part {
+  margin-bottom: 15px;
+}
+
+ul {
+  list-style: none outside none;
+  padding-left: 0;
+  margin: 0;
+}
+
+.main-part .item img {
+  /*width: 100%;*/
+  display: block;
+  margin: 0 auto;
+  max-width: 100%;
+}
+.main-part .item {}
+.lSSlideOuter .lSPager.lSGallery img {
+  display: block;
+  height: 100%;
+  max-width: 100px;
+  width: 100%;
+  max-height: 100px;
+}
+
+.clearfix video {
+  width: 640px;
+  margin: 0 auto;
+  height: 480px;
+  display: block;
+  background-color: #000;
 }

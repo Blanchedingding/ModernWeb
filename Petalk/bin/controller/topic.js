@@ -15,10 +15,7 @@ module.exports.addQuestion = function(req, res, next){
     q.questime = (new Date()).toLocaleDateString() + " " + (new Date()).toLocaleTimeString();
     q.save(function(err) {
         if (err) throw err;
-        // console.log('Question saved.');
-        // res.info('提问成功！');
-        // res.redirect('/profile');
-        next();
+        res.redirect('/profile');
     });
 };
 
@@ -31,7 +28,6 @@ module.exports.addAnswer = function(req, res, next){
     a.anstime = (new Date()).toLocaleDateString() + " " + (new Date()).toLocaleTimeString();
     a.save(function(err) {
         if (err) throw err;
-        // console.log('Answer saved.');
         Question.update({_id:a.quesid},{$inc:{'ansnum':1}},function(err2, doc){
             if(err2) return next(err2);
             // res.info('回答成功！');
@@ -102,10 +98,8 @@ module.exports.getSideLists = function(req, res, next){
         qs.forEach(function(q){
             ids.push(q.user._id);
         });
-        // console.log(qs);
         User.find({'_id':{$in:ids}}, function(err2, us){
             if (err2) throw next(err2);
-            // console.log(us);
             return res.json({questions:qs, users:us});
         })
     });

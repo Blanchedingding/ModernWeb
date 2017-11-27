@@ -1,0 +1,130 @@
+@charset "utf-8";
+body {
+    margin: 0;
+    font-family: 'Helvetica Neue',Helvetica,Arial,sans-serif;
+}
+
+hr{
+    border:0;
+    background-color:#CC99CC;
+    height:1px;
+    clear:both;
+}
+
+img:hover{
+    box-shadow: 0 0 1px 1px rgba(0,0,0,0.5);
+}
+
+a:hover{
+    text-decoration: none;
+    color:orange;;
+}
+
+a{
+    color:#660066;
+}
+
+.mybutton{
+    background: #CC99CC;
+    line-height: 24px;
+    border-radius: 8px;
+    outline:none;
+    font-family: 'Helvetica Neue',Helvetica,Arial,sans-serif;
+    font-size:20px;
+    font-weight: bold;
+    color: #fff;
+}
+
+.mybutton:hover{
+    color:#fff;
+    cursor:pointer;
+    background: #996699;
+    box-shadow:  0 0 1px 1px rgba(0,0,0,0.5);
+}
+
+/*视频*/
+
+.container {
+    width: 98%;
+    position: relative;
+    margin-bottom: 20px;
+    margin: 0 auto;
+}
+
+#photo-box{
+    width:100%;
+    border:none;
+    color:#777;
+    padding-left: 10px;
+    padding-bottom: 10px
+}
+
+#photo-box .photo {
+    display: block;
+    /*float: left;*/
+    width: 225px;
+    background-color: #fff;
+    overflow: hidden;
+    position: absolute;
+    -webkit-transition: .3s ease-in-out;
+    -o-transition: .3s ease-in-out;
+    transition: .3s ease-in-out;
+    border: 1px solid #e2e2e2;
+}
+
+#photo-box .photo .content {
+    margin: 0 10px;
+    font-size: 14px;
+    color: #777;
+    line-height: 20px;
+    word-break: break-all;
+}
+/*总体布局*/
+
+.cloudmain{
+    width:1200px;
+    min-width: 1200px;
+    margin:auto;
+    font-family: "微软雅黑";
+    color:#660066;
+}
+
+.cloudleft{
+    float:left;
+    width:900px;
+    color:#660066;
+    margin-top:30px;
+    margin-bottom: 50px;
+    /*margin-left: 30px;*/
+}
+
+.cloudright{
+    float:right;
+    width:250px;
+    list-style-type:none;
+    color:#660066;
+    margin-top: 50px;
+}
+
+/*vedio style*/
+#photo-box .photo {
+    display: block;
+    /*float: left;*/
+    width: 225px;
+    background-color: #fff;
+    overflow: hidden;
+    position: absolute;
+    -webkit-transition: .3s ease-in-out;
+    -o-transition: .3s ease-in-out;
+    transition: .3s ease-in-out;
+    border: 1px solid #e2e2e2;
+}
+
+#photo-box .photo .content {
+    margin: 0 10px;
+    font-size: 14px;
+    color: #777;
+    line-height: 20px;
+    word-break: break-all;
+}
+

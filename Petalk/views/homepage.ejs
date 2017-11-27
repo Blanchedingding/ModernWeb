@@ -27,7 +27,7 @@
             questions.forEach(function(q){%>
             <div style="margin-bottom: 30px">
                 <li style="font-size: 19px;font-weight: bold;list-style: square inside url('img/star.png')"><a href="/topic?id=<%=q._id%>"><%=q.quescontent%></a></li>
-                <p style="color:#CC99CC; text-align: right"><a><%=q.user.username%>&nbsp&nbsp</a><span class="questime">提问于 <%=q.questime%></span></p>
+                <p style="margin-top:10px;color:#CC99CC; text-align: right"><a><%=q.user.username%>&nbsp&nbsp</a><span class="questime">提问于 <%=q.questime%></span></p>
             </div>
             <%})
             }%>
