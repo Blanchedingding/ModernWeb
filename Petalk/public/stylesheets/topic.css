@@ -1,0 +1,283 @@
+@charset "utf-8";
+body {
+    margin: 0;
+    font-family: 'Helvetica Neue',Helvetica,Arial,sans-serif;
+}
+
+hr{
+   border:0;
+   background-color:#CC99CC;
+   height:1px;
+   clear:both;
+}
+
+img:hover{
+  box-shadow: 0 0 1px 1px rgba(0,0,0,0.5);
+}
+
+a:hover{
+    text-decoration: none;
+    color:orange;;
+}
+
+a{
+    color:#660066;
+}
+
+.nav {
+   top:0;
+   height:60px; 
+   width:100%;
+   background-color:#CC99CC;
+   
+}
+
+.nav-inner {
+  width:1200px;
+	height:60px;
+	background-color:#CC99CC;
+  margin-left:auto;
+	margin-right:auto;
+	
+}
+
+.mybutton{
+    background: #CC99CC;
+    line-height: 24px;
+    border-radius: 8px;
+    outline:none;
+    font-family: 'Helvetica Neue',Helvetica,Arial,sans-serif;
+    font-size:20px;
+    font-weight: bold;
+    color: #fff;
+}
+
+.mybutton:hover{
+    color:#fff;
+    cursor:pointer;
+    background: #996699;
+    box-shadow:  0 0 1px 1px rgba(0,0,0,0.5);
+}
+
+/*左边的问题及回答区域*/
+.questionleft{
+  float:left;
+  width:750px;
+  color:#660066;
+  margin-top:30px;
+  margin-bottom: 50px;
+    margin-left: 30px;
+}
+
+.question{
+   font-size: 20px;
+   font-weight: bold;
+   margin-bottom: 20px;
+}
+
+.questionname{
+  text-decoration: none;
+}
+
+.questionname:hover{
+    color:orange;
+}
+
+.time{
+   color:#CC99CC;
+   text-decoration: none;
+   margin-bottom: 20px;
+   font-size: 13px;
+}
+
+.quesdesc{
+    color:#CC99CC;
+    margin-bottom: 20px;
+    font-size: 16px;
+    color:#996699;
+    text-indent: 2em;
+}
+
+.answer{
+  margin-top: 20px;
+  margin-bottom: 50px;
+  /*margin-left: 20px;*/
+}
+
+.answer>a>img{
+  float:left;
+   width:50px;
+   height:50px;
+   margin-right: 10px;
+}
+
+
+
+.answerperson{
+  line-height: 50px;
+  margin-left: 60px;
+}
+
+.answername{
+  font-weight: bold;
+  cursor: pointer;
+    font-size: 16px;
+    font-weight: bold;
+}
+
+.answername:hover{
+  color:orange;
+}
+
+.answerintroduction{
+  font-size: 15px;
+  color:#996699;
+  word-break:break-all;
+}
+
+.answercontent{
+  margin-top: 10px;
+  margin-left: 50px;
+  margin-right: 20px;
+  margin-bottom: 10px;
+  word-break:break-all;
+    font-size: 16px;
+}
+
+.afteranswer{
+  float:right;
+  position:relative;
+  /*right:-650px;*/
+  /*word-spacing: inline;*/
+    word-spacing: normal;
+}
+
+#commentlabel{
+  color:#CC99CC;
+  text-decoration: none;
+  margin-right: 10px;
+}
+
+#commentlabel:hover{
+  color:#660066;
+}
+
+/*评论区域*/
+#comment{
+  display: none;
+  position:relative;
+  top:30px;
+  /*width:800px;*/
+  border-radius: 8px;
+  border:1px solid #CC99CC;
+  margin-left:30px;
+  top:30px;
+  padding:10px 10px;
+}
+
+#comment::before,
+#comment::after {
+   content: ' '; 
+   height: 0; 
+   position: relative; 
+   width: 0; 
+}
+
+#comment::before {
+  position: absolute; 
+  left: 645px;
+  top: -29px;
+  border: 15px solid;
+  border-color:  transparent transparent #CC99CC transparent;
+}
+
+#comment::after {
+  position: absolute; 
+  left: 647px; 
+  top: -25px;  
+  border: 13px solid; 
+  border-color: transparent transparent #fff transparent;
+}
+
+.commenttip{
+  margin:20px 20px;
+}
+
+.commenttip>a>img{
+  width:50px;
+  height:50px;
+  float:left;
+  margin-right: 10px;
+}
+
+.commentname{
+  font-weight: bold;
+  cursor: pointer;
+}
+
+.commentname:hover{
+  color:orange;
+}
+
+
+.commetcontent{
+  margin-top: 10px;
+  margin-bottom: 10px;
+  margin-left: 60px;
+  word-break:break-all;
+}
+
+.commenttime{
+  margin-left: 60px;
+  color:#CC99CC;
+  font-size: 13px;
+}
+
+#mycommentcontent{
+  /*background-color: #EBD3E8;*/
+  color:#660066;
+  margin-left:20px;
+  border-radius: 8px;
+  width:650px;
+  height:30px;
+  outline:none;
+}
+
+#submitcomment{
+  width:100px;
+  height:30px;
+  margin-left: 550px;
+  margin-top: 10px;
+}
+
+#submitcomment:hover{
+    color:#fff;
+    cursor:pointer;
+    background: #996699;
+    box-shadow:  0 0 1px 1px rgba(0,0,0,0.5);
+}
+
+.answercontent>img{
+  width:650px;
+  height:400px;
+}
+
+#myanswercontent{
+  border-radius: 8px;
+  outline:none;
+  width:700px;
+  height:100px;
+  font-size: 16px;
+  resize:none;
+    padding:10px;
+}
+
+#myanswercontent:hover{
+  /*box-shadow: 0 0 1px 1px rgba(0,0,0.5);*/
+    box-shadow: 0 0 1px 1px rgb(0,0,0.5);
+}
+
+#submitanswer{
+  float:right;
+  margin-right: 50px;
+}

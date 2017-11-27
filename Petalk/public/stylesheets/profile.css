@@ -38,7 +38,7 @@ hr{
     border-radius: 8px;
     outline:none;
     font-family: 'Helvetica Neue',Helvetica,Arial,sans-serif;
-    font-size:20px;
+    font-size:18px;
     font-weight: bold;
     color: #fff;
 }
@@ -50,419 +50,91 @@ hr{
     box-shadow:  0 0 1px 1px rgba(0,0,0,0.5);
 }
 
-/* style for logo
---------------------------------*/
-.logo {
-    width:190px;
-    height:45px;
-    float:left;
-    margin-top:5px;
-	 color:#efefef ;
-}
-
-/*搜索框*/
-#searchinput{
-   float: left;
-    background-color: #EBD3E8;
-    border-radius: 8px;
-    height: 28px;
-    width:200px;
-    outline:none;
-    margin:10px 0px 10px 30px;
-    color:#999;
-    font-size: 15px;
-    padding-right: 40px;
-}
-
-/*搜索按钮*/
-#searchbutton{
-    float: left;
-    margin-top:10px;
-    margin-left: 10px;
-    width:80px;
-    height:35px; 
-}
-
-/* 三个菜单*/
-.menubar {
-   float:left;
-   line-height:60px;
-   padding:0px 0px;
-   margin-left:20px;
-   text-decoration:none;
-   display:block;
-   font-family: 'Helvetica Neue',Helvetica,Arial,sans-serif;
-   font-size:20px;
-   font-weight: bold;
-}
-
-.menu {
-  line-height:60px;
-  padding:0px;
-  float:left;
-  width:80px;
-  height:60px;
-  text-align:center;
-  list-style:none;
-}
-
-.menu > a {
-  display:block;
-  text-decoration:none;
-  color:#fff ;
-}
-
-.menu:hover {
-  background-color:#996699;
-	height:60px;
- }
-/*用户头像名字*/
-.nav-user{
-  float:right;
-  margin-right:80px;
-  margin-top: 0px;
-  padding: 0px 0px;
-  line-height:60px;
-  padding:0px;
-  width:150px;
-  height:60px;
-  text-align:center;
-  list-style:none;
-  text-align: left;
-
-}
-
-.nav-user:hover{
-   background-color:#996699;
-   height:60px;
-}
-
-.nav-user img{
-  width:50px;
-  height:50px;
-  float:left;
-  margin-top:5px;
-  margin-left:5px;
-   border-radius: 50px;
-}
-
-.nav-user a{
-   text-decoration: none;
-   color:#fff;
-   font-size: 18px;
-   font-weight: bold;
-}
-
-#name{
-  float:left;
-  width:70px;
-  overflow: hidden;
-  text-overflow:ellipsis;
-  -o-text-overflow:ellipsis;
-  white-space:nowrap;
-}
-
-
-
-
-/* style for submenus
----------------------------------*/
-.submenubar {
-   visibility:hidden;
-   border:2px solid #CC99CC;
-   border-radius:4px;
-   width:120px;
-   margin:60px 0px;
-   padding:5px;
-   text-align:left;
-   list-style-type:none;
-   line-height:30px;
-   position:absolute;
-   background-color:#fff;
- }
-
-.nav-user:hover .submenubar {
-  visibility:visible;
-  /*background-color:#fff;*/
- 
-}
-
-.submenubar > li {
-   list-style:none;
-   /*white-space:normal;*/
-   white-space:nowrap;
-   text-indent:0.5em;
-   border-radius: 4px;
-}
-
-.submenubar > li:hover {
-    background-color:#CC99CC;
-}
-
-.submenubar > li > a {
-   text-decoration:none;
-	 color:#996699;
-	 display:block;
-}
-
-.submenubar > li:hover > a {
-   color:#fff;
- }
-
-/* style for triangles in submenubar
-You can take this as a reference to make this triangle:
-http://stackoverflow.com/questions/9450733/css-triangle-custom-border-color
-----------------------------------------*/
-.submenubar::before,
-.submenubar::after {
-   content: ' '; 
-   height: 0; 
-   position: relative; 
-   width: 0; 
-}
-
-.submenubar::before {
-  position: absolute; 
-  left: 65%;
-  top: -23%;
-  border: 14px solid;
-  border-color:  transparent transparent #CC99CC transparent;
-}
-
-.submenubar::after {
-    position: absolute; 
-	left: 66%; 
-	top: -20%;  
-	border: 13px solid; 
-	border-color: transparent transparent #fff transparent;
-}
-
-/*右侧个人信息、简介和关注头像*/
-.profilemain{
-  width:1200px;
-  min-width: 1200px;
-  margin:auto;
-  font-family: "微软雅黑"；
-}
-
-.profileright{
-   border-left: solid 2px #EBD3E8;
-   margin-top: 10px;
-   float:right;
-   width:300px;
-   list-style-type:none;
-   color:#660066;
-   margin-right: 50px;
-
-}
-
-.profileright>img{
-  margin-left: 100px;
-  margin-top: 0px;
-  width:100px;
-  height:100px;
-  cursor: pointer;
-}
-
-#warning{
-  visibility: hidden;
-  padding:5px 5px;
-  width:50px;
-  height:30px;
-  border-radius: 3px;
-  position:relative;
-  font-size: 12px;
-  border:1px #CC99CC;
-  top:40px;
-  left:40px;
-  z-index: 2;
-  background-color: #EBD3E8;
-}
-
-#aboutme{
-  background-color:#EBD3E8; 
-  display:none;
-  padding:10px 10px 20px;
-  margin:0px auto;
-  width:200px;
-  height:80px;
-  font-size: 18px;
-  border-radius: 5px;
-  z-index: 3;
-}
-
-#closeicon{
-  float:right;
-  background: #CC99CC;
-  border-radius: 20px;
-  padding:4px 4px;
-  margin-top:-15px;
-  margin-right:-15px;
-  width:15px;
-  height:15px;
-}
-
-#closeicon:hover{
-  cursor: pointer;
-  box-shadow: 0 0 1px 1px rgba(0,0,0,0.5);
-}
-
-.myname{
-  /*float:left;*/
-  /*margin-left:50%;*/
-  font-weight: bold;
-  margin:0px auto; 
-  margin-bottom: 5px;
-
-}
-
-#aboutme::before,
-#aboutme::after {
-   content: ' '; 
-   height: 0; 
-   position: absolute; 
-   width: 0; 
-}
-
-#aboutme::before {
-  position: relative; 
-  left: 80px;
-  top: -40px;
-  border: 14px solid;
-  border-color:  transparent transparent #EBD3E8 transparent;
-}
-
-
-
-.attention{
-  margin-top: 30px;
-  clear:both;
-  padding-bottom: 20px;
-}
-
-.attentionto{
-   float:left;
-   margin-left: 70px;
-   text-align: center;
-}
-
-.attentioned{
-   float:right;
-   margin-right: 60px;
-   text-align: center;
-}
-
-.recentto{
-  margin-top: 20px;
-  margin-left: 30px;
-}
-
-.recentto img{
-  width:50px;
-  height:50px;
-  margin:5px 5px;
-}
-
-.recented{
-  margin-left: 30px;
-  margin-bottom: 20px;
-}
-
-.recented img{
-  width:50px;
-  height:50px;
-  margin:5px 5px;
-}
 
 /*问题回答选项卡*/
 .profileleft{
   float:left;
   width:700px;
-  margin-top:40px;
-  margin-left:-40px;
+  margin-top:20px;
+  margin-left:40px;
 }
 
-.profiletip{
-    list-style: none;
-    color:#996699;
-    width:30px;
-    height:160px;
-   
-}
+/*.profiletip{*/
+    /*list-style: none;*/
+    /*color:#996699;*/
+    /*width:30px;*/
+    /*height:160px;*/
+   /**/
+/*}*/
 
-.procheck{
-    float: left;
-    width: 30px;
-    height: 70px;
-    line-height: 30px;
-    text-align: center;
-    cursor: pointer;
-    background: #CC99CC;
-    color:#fff;
-    border-radius: 3px;
-}
+/*.procheck{*/
+    /*float: left;*/
+    /*width: 30px;*/
+    /*height: 70px;*/
+    /*line-height: 30px;*/
+    /*text-align: center;*/
+    /*cursor: pointer;*/
+    /*background: #CC99CC;*/
+    /*color:#fff;*/
+    /*border-radius: 3px;*/
+/*}*/
 
-.procheck:hover{
-    box-shadow:  0 0 1px 1px rgba(0,0,0,0.5);
-    background-color: #996699;
-}
+/*.procheck:hover{*/
+    /*box-shadow:  0 0 1px 1px rgba(0,0,0,0.5);*/
+    /*background-color: #996699;*/
+/*}*/
 
-.procheck.active:hover{
-    background: #EBD3E8;
-    box-shadow:  0 0 0px 0px rgba(0,0,0,0.5);
-}
+/*.procheck.active:hover{*/
+    /*background: #EBD3E8;*/
+    /*box-shadow:  0 0 0px 0px rgba(0,0,0,0.5);*/
+/*}*/
 
-.procheck.active {
-    cursor: default;
-    background: #EBD3E8;
-    color:#996699;
-    border-radius: 3px;
+/*.procheck.active {*/
+    /*cursor: default;*/
+    /*background: #EBD3E8;*/
+    /*color:#996699;*/
+    /*border-radius: 3px;*/
 
-}
+/*}*/
 
 .profilecontent {
-    /*margin: 20px;*/
-    /*clear:both;*/
-    position: relative;
-    left: 80px;
-    top: -180px;
-    width:700px;
-    /*padding-left: 40px;*/
+   margin-top: 30px;
 }
 
-.nocheck {
-    display: none;
-    width:700px;
-    padding-left: 50px;
-    margin-top: 20px;
-   
-}
+/*.nocheck {*/
+    /*display: none;*/
+    /*width:700px;*/
+    /*padding-left: 50px;*/
+    /*margin-top: 20px;*/
+   /**/
+/*}*/
 
-.check.active{
-    display: block;
-    /*border:#CC99CC 2px;*/
-    /*border-radius: 5px;*/
-}
+/*.check.active{*/
+    /*display: block;*/
+    /*!*border:#CC99CC 2px;*!*/
+    /*!*border-radius: 5px;*!*/
+/*}*/
 
 .myquestion{
   list-style: none;
   line-height: 25px;
   width:700px;
-
+  font-size: 19px;
 }
 
-.myquestion>li{
-   margin-bottom: 15px;
+.myquestion div>li{
+   margin-bottom: 5px;
+    font-weight:bold;
 }
 
-.myquestion>li a{
+.myquestion div>li a{
    text-decoration: none;
    color:#660066;
    /*margin-bottom: 50px;*/
   
 }
 
-.myquestion>li a:hover{
+.myquestion div>li a:hover{
    text-decoration: underline;
 }
 
@@ -489,4 +161,13 @@ http://stackoverflow.com/questions/9450733/css-triangle-custom-border-color
 .responseimg{
   width:50%;
   height:50%;
+}
+
+/*提问时间*/
+.questime{
+    color:#CC99CC;
+    text-decoration: none;
+    margin-left: 450px;
+    font-size: 14px;
+    text-align: right;
 }

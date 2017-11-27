@@ -2,123 +2,85 @@
 <head>
     <meta charset="UTF-8">
     <title>个人页面</title>
+    <link rel="stylesheet" type="text/css" href="stylesheets/lib/bootstrap.css">
     <link rel="stylesheet" type="text/css" href="font-awesome/css/font-awesome.css">
     <link rel="stylesheet" type="text/css" href="font-awesome/css/font-awesome.min.css">
-    <link rel="stylesheet" type="text/css" href="stylesheets/profile.css" media="only screen and (min-device-width : 768px)">
-    <script type="text/javascript" src="javascripts/profile.js" defer="defer" charset="utf-8"></script>
+    <link rel="stylesheet" type="text/css" href="stylesheets/header.css">
+    <link rel="stylesheet" type="text/css" href="stylesheets/profile-right.css">
+    <link rel="stylesheet" type="text/css" href="stylesheets/profile.css">
     <script src="javascripts/lib/jquery-2.1.3.min.js"></script>
+    <script  src="javascripts/lib/bootstrap.js"></script>
+    <script type="text/javascript" src="javascripts/header.js" defer="defer" charset="utf-8"></script>
+    <script type="text/javascript" src="javascripts/profile.js" defer="defer" charset="utf-8"></script>
+
 </head>
 
 <body>
-<div class="nav">
-    <div class="nav-inner">
-        <img src="img/logo.png" class="logo">
-        <i class="fa fa-search fa-1x" style="color:#996699;z-index:2;position:relative;left:-380px;top:20px;"></i>
-        <input type="text" id="searchinput" value="搜索问题或用户">
-        <input type="submit" class="mybutton" id="searchbutton" value="提问题">
 
-        <div class="menubar">
-            <li class="menu"><a href="#">首页</a></li>
-            <li class="menu"><a href="#">话题</a></li>
-            <li class="menu"><a href="#">发现</a></li>
-        </div>
-
-        <div class="nav-user">
-            <a class="menu" href="#"><img src="img/user/user1.gif">
-                <a id="name" href="#">魅力兔斯基</a>
-            </a>
-            <ul class="submenubar">
-                <li><a href="#">
-                        <i class="fa fa-user fa-1x"></i>&nbsp&nbsp我的主页</a></li>
-                <li><a href="#">
-                        <i class="fa fa-envelope-o fa-1x"></i>&nbsp&nbsp私信</a></li>
-                <li><a href="#">
-                        <i class="fa fa-gear fa-1x"></i>&nbsp&nbsp设置</a></li>
-                <li><a href="#">
-                        <i class="fa fa-sign-out fa-1x"></i>&nbsp&nbsp退出</a></li>
-            </ul>
-        </div>
-    </div>
-</div>
+<%include header%>
 
 <div class="profilemain">
+
     <div class="profileleft">
-        <ul class="profiletip">
-            <li id="q" class="procheck active">提问</li>
-            <li id="a" class="procheck">回答</li>
-        </ul>
-        <div class="profilecontent">
-            <div class="check active">
+        <div style="border:#CC99CC 2px solid; width:150px;height:50px;  font-weight:bold; color: #660066; text-align:center; border-radius: 8px">
+            <p style="font-size: 20px;line-height: 40px;margin:0 ;">我发起的话题</p>
+        </div>
+        <div class="profilecontent" >
+
                 <ul class="myquestion">
-                    <li><a href="#">一不小心被自己家里养的鳄鱼咬了一口，就一条两米长的小鳄鱼，需要做什么处理？要去医院打针吗？伤口还在流血，在线等，急</a></li>
-                    <li><a href="#">小香猪为什么不会长大？吉娃娃呢？</a></li>
-                    <li><a href="#">捡到一只流浪狗，很可怜的，我想收养它，要办些什么手续？要带它去检查、打疫苗吗？</a></li>
-                    <li><a href="#">养一条哈士奇是一种什么样的体验？为什么都说哈士奇蠢？</a></li>
-                    <li><a href="#">眼镜蛇可以当宠物养吗？会不会咬人啊？</a></li>
+                    <% if(questions){
+                        questions.forEach(function(q){%>
+                            <div style="margin-bottom: 15px">
+                                <li><a href="/topic?id=<%=q._id%>"><%=q.quescontent%></a></li>
+                                <span class="questime">提问于 <%=q.questime%></span>
+                            </div>
+
+                        <%})
+                    }%>
+                    <!--<li><a href="#">一不小心被自己家里养的鳄鱼咬了一口，就一条两米长的小鳄鱼，需要做什么处理？要去医院打针吗？伤口还在流血，在线等，急</a></li>-->
+                    <!--<li><a href="#">小香猪为什么不会长大？吉娃娃呢？</a></li>-->
+                    <!--<li><a href="#">捡到一只流浪狗，很可怜的，我想收养它，要办些什么手续？要带它去检查、打疫苗吗？</a></li>-->
+                    <!--<li><a href="#">养一条哈士奇是一种什么样的体验？为什么都说哈士奇蠢？</a></li>-->
+                    <!--<li><a href="#">眼镜蛇可以当宠物养吗？会不会咬人啊？</a></li>-->
                 </ul>
             </div>
-            <div class="nocheck">
-                <div calss="responses">
-                    <p class="requests" herf="#">如果要养宠物蜘蛛,养哪种蜘蛛比较合适?要注意什么问题 (求仔细解释)</p>
-                    <p class="myresponse">越南捕鸟蛛，是最大型的蜘蛛，最大的有25厘米长。原产自亚马逊雨林区，生活在树洞里，喜欢吃麻雀的幼仔，可以一次吃下整只乳鸽。它们有很长的螫肢，以方便食肉。不过一物降一物，它们最怕非洲土人，因为土人百毒不侵，喜欢用薄荷叶将它们卷着生吞，因为它们含有丰富的蛋白质和钙。你可以试着养养</p>
-                    <a class="responsetime">2015-05-03 11:30</a>
-                </div>
-                <hr class="responsehr">
-                <div calss="responses">
-                    <p class="requests" herf="#">真的有龙猫这种生物吗？长什么样啊？貌似可以当宠物养？</p>
-                    <p class="myresponse">毛丝鼠（学名：Chinchilla）是啮齿目毛丝鼠科毛丝鼠属动物的统称。毛丝鼠体型小而肥胖，尾端的毛长而蓬松。全身背满均匀的绒毛，其状如丝一样致密柔软，故得名。其为原产于南美洲安第斯山脉地区的兔子大小的花栗鼠类动物，以皮毛柔软漂亮而闻名于世，由于受到人类的大肆捕杀而濒临灭绝。本属只有2个品种，两者皆为极危（CR）物种。由于毛丝鼠的长相与日本动画大师宫崎俊的动画片《龙猫》中的主人公龙猫太郎相似，故后被港台称之为龙猫。就是下面这个样子：<br><img src="img/dog/mouse.jpg" class="responseimg"> </p>
-                    <a class="responsetime">2015-05-03 17:30</a>
-                </div>
-                <hr class="responsehr">
-                <div calss="responses">
-                    <p class="requests" herf="#">你家的宠物教你的道理</p>
-                    <p class="myresponse">比起自己的饮水机，猫更喜欢从杯子里喝水，以主张“我的东西是我的，你的东西也是我的”。确定水有没有被猫喝过有两种途径：一是直接问猫，但除了一副“我是你爹”的臭脸以外什么都得不到；二是亲自喝一口，如果有灰尘的味道就是被喝过了，但既已入肚也为时晚矣。半满的水杯和爱情一样，都是不解之谜。</p>
-                    <a class="responsetime">2015-05-03 21:30</a>
-                </div>
-                <hr class="responsehr">
-                <div calss="responses">
-                    <p class="requests" herf="#">什么时候你会想把自己的狗丢出去？</p>
-                    <p class="myresponse">上课时，我举手跟老师说：老师，我的作业被我家狗狗吃掉了。。<br>
-                        老师：小明同学，撒谎不是个好习惯，作业怎么可能会被狗吃掉呢，
-                        你可不能学放羊的孩子啊巴拉巴拉巴拉。。。。。（以下省略两千字），所以小明同学，作业要是没做或者不会就跟老师说实话啊，你这样撒谎是不对的巴拉巴拉巴拉（以下省略两千字）。。。。。。<br>
-                        我欲哭无泪在心里内牛满面，想起家里的贱狗边吃我的作业边挑衅的看着我，似乎在说：去啊，去告诉你的老师，说我吃了你的作业，看看他会不会相信你。。<br>
-                        <img src="img/dog/dog.jpg" class="responseimg"> </p>
-                    <a class="responsetime">2015-05-03 23:30</a>
-                </div>
-            </div>
-        </div>
-    </div>
 
 
-    <div class="profileright">
-        <div id="warning">点击显示个人简介</div>
-        <img id="myicon" src="img/user/user1.gif">
-        <div id="aboutme">
-            <img src="img/number/close.png" id="closeicon">
-            <a class="myname">魅力兔斯基</a><br><br>
-            <a>吃吃吃吃吃吃吃，我就是个大吃货！</a>
-        </div>
-        <div class="attention">
-            <div class="attentionto">关注了<br>20人</div>
-            <div class="attentioned">关注者<br>100人</div>
-        </div>
-        <hr>
-        <div class="recentto">
-            <h3>最近关注了</h3>
-            <a href="#"><img src="img/user/user2.jpg"></a>
-            <a href="#"><img src="img/user/user3.jpg"></a>
-            <a href="#"><img src="img/user/user4.jpg"></a>
+            <!--<div class="nocheck">-->
+                <!--<div calss="responses">-->
+                    <!--<p class="requests" herf="#">如果要养宠物蜘蛛,养哪种蜘蛛比较合适?要注意什么问题 (求仔细解释)</p>-->
+                    <!--<p class="myresponse">越南捕鸟蛛，是最大型的蜘蛛，最大的有25厘米长。原产自亚马逊雨林区，生活在树洞里，喜欢吃麻雀的幼仔，可以一次吃下整只乳鸽。它们有很长的螫肢，以方便食肉。不过一物降一物，它们最怕非洲土人，因为土人百毒不侵，喜欢用薄荷叶将它们卷着生吞，因为它们含有丰富的蛋白质和钙。你可以试着养养</p>-->
+                    <!--<a class="responsetime">2015-05-03 11:30</a>-->
+                <!--</div>-->
+                <!--<hr class="responsehr">-->
+                <!--<div calss="responses">-->
+                    <!--<p class="requests" herf="#">真的有龙猫这种生物吗？长什么样啊？貌似可以当宠物养？</p>-->
+                    <!--<p class="myresponse">毛丝鼠（学名：Chinchilla）是啮齿目毛丝鼠科毛丝鼠属动物的统称。毛丝鼠体型小而肥胖，尾端的毛长而蓬松。全身背满均匀的绒毛，其状如丝一样致密柔软，故得名。其为原产于南美洲安第斯山脉地区的兔子大小的花栗鼠类动物，以皮毛柔软漂亮而闻名于世，由于受到人类的大肆捕杀而濒临灭绝。本属只有2个品种，两者皆为极危（CR）物种。由于毛丝鼠的长相与日本动画大师宫崎俊的动画片《龙猫》中的主人公龙猫太郎相似，故后被港台称之为龙猫。就是下面这个样子：<br><img src="img/dog/mouse.jpg" class="responseimg"> </p>-->
+                    <!--<a class="responsetime">2015-05-03 17:30</a>-->
+                <!--</div>-->
+                <!--<hr class="responsehr">-->
+                <!--<div calss="responses">-->
+                    <!--<p class="requests" herf="#">你家的宠物教你的道理</p>-->
+                    <!--<p class="myresponse">比起自己的饮水机，猫更喜欢从杯子里喝水，以主张“我的东西是我的，你的东西也是我的”。确定水有没有被猫喝过有两种途径：一是直接问猫，但除了一副“我是你爹”的臭脸以外什么都得不到；二是亲自喝一口，如果有灰尘的味道就是被喝过了，但既已入肚也为时晚矣。半满的水杯和爱情一样，都是不解之谜。</p>-->
+                    <!--<a class="responsetime">2015-05-03 21:30</a>-->
+                <!--</div>-->
+                <!--<hr class="responsehr">-->
+                <!--<div calss="responses">-->
+                    <!--<p class="requests" herf="#">什么时候你会想把自己的狗丢出去？</p>-->
+                    <!--<p class="myresponse">上课时，我举手跟老师说：老师，我的作业被我家狗狗吃掉了。。<br>-->
+                        <!--老师：小明同学，撒谎不是个好习惯，作业怎么可能会被狗吃掉呢，-->
+                        <!--你可不能学放羊的孩子啊巴拉巴拉巴拉。。。。。（以下省略两千字），所以小明同学，作业要是没做或者不会就跟老师说实话啊，你这样撒谎是不对的巴拉巴拉巴拉（以下省略两千字）。。。。。。<br>-->
+                        <!--我欲哭无泪在心里内牛满面，想起家里的贱狗边吃我的作业边挑衅的看着我，似乎在说：去啊，去告诉你的老师，说我吃了你的作业，看看他会不会相信你。。<br>-->
+                        <!--<img src="img/dog/dog.jpg" class="responseimg"> </p>-->
+                    <!--<a class="responsetime">2015-05-03 23:30</a>-->
+                <!--</div>-->
+            <!--</div>-->
+
+
         </div>
 
-        <hr>
-        <div class="recented">
-            <h3>最近被他们关注</h3>
-            <a href="#"><img src="img/user/user5.jpg"></a>
-            <a href="#"><img src="img/user/user6.jpg"></a>
-            <a href="#"><img src="img/user/user7.jpg"></a>
-            <a href="#"><img src="img/user/user8.jpg"></a>
-        </div>
-    </div>
+
+    <%include profile-right%>
 
 </div>
 
