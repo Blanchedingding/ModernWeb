@@ -104,6 +104,19 @@ a{
     list-style-type:none;
     color:#660066;
     margin-top: 50px;
+    margin-right: 20px;
+}
+
+.myinput{
+    border-radius: 8px;
+    height: 35px;
+    width: 250px;
+    outline: none;
+    margin: 10px 0px 10px 20px;
+    /*color: #999;*/
+    font-size: 15px;
+    padding-right: 40px;
+    padding: 5px;
 }
 
 /*vedio style*/

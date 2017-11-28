@@ -95,24 +95,24 @@ var VideoSchema = new Schema({
 var Video = mongoose.model('Video', VideoSchema);
 module.exports.Video = Video;
 
-var DanmakuSchema = new Schema({
-    user:{
-        _id:String,
-        username:String,
-        email:String,
-        password:String,
-        salt:String,
-        usericon:String,
-        briefintro:String,
-        fan:Number,
-        likes:Number
-    },
-    videoid:String,
-    danmakutime:String,
-    danmakucontent:String
-});
-var Danmaku = mongoose.model('Danmaku', DanmakuSchema);
-module.exports.Danmaku = Danmaku;
+// var DanmakuSchema = new Schema({
+//     user:{
+//         _id:String,
+//         username:String,
+//         email:String,
+//         password:String,
+//         salt:String,
+//         usericon:String,
+//         briefintro:String,
+//         fan:Number,
+//         likes:Number
+//     },
+//     videoid:String,
+//     danmakutime:String,
+//     danmakucontent:String
+// });
+// var Danmaku = mongoose.model('Danmaku', DanmakuSchema);
+// module.exports.Danmaku = Danmaku;
 
 
 

@@ -30,7 +30,6 @@
             for(var i = 0; i < videos.length; i++){%>
             <a class="photo" target="_blank" href="/watchVideo?id=<%=videos[i]._id%>" >
                 <video src="<%=videos[i].videopath%>" preload="metadata"  onloadeddata="vload(this)" style="width:100%"></video>
-                <!--<video src="<%=videos[i].videopath%>" preload="metadata"  onloadeddata="vload(this)" poster="/img/user/user1.gif" style="width:100%"></video>-->
                 <div class="content">
                     <%=videos[i].videotitle%>
                 </div>
@@ -41,23 +40,18 @@
 
         </div>
 
-
-
     </div><!--cloudleft end-->
 
 
     <div class="cloudright">
 
-        <form method='post' action="/uploadVideo" enctype='multipart/form-data' id="video-form">
+        <form method='post' action="/uploadVideo" enctype='multipart/form-data' id="video-form"  style="margin-top: 20px;text-align: center">
+            <div style="text-align: center;font-size: 18px;font-weight: bold"><p>上传视频</p></div>
             <input type='file' name='video' id="video" style="display: none"/>
-            <input type='text' name='title' id="title" placeholder="视频标题"/>
-            <input type='text' name='desc' id="desc" placeholder="视频描述"/>
-            <input type="button" class="mybutton" id="upload-video" value="上传视频">
+            <input type='text' name='title' id="title" class="myinput" placeholder="视频标题"/>
+            <textarea type='text' name='desc' id="desc" class="myinput" placeholder="视频描述" style="height:80px;resize:none;" rows="3"></textarea>
+            <input type="button" class="mybutton" id="upload-video" value="选择视频" style="padding: 8px">
         </form>
-
-        <div>
-
-        </div>
 
     </div><!--cloudright end-->
 

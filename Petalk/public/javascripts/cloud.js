@@ -8,12 +8,13 @@ $('#upload-video').on('click', function(){
 
 $('#video').on('change', function(){
     var fileValue = $('#video').val();
-    if(fileValue && fileValue.length > 1 ){
+    var videoTitle = $('#title').val();
+    if(fileValue && fileValue.length > 1 && videoTitle && videoTitle.length > 0){
         var lodt = fileValue.lastIndexOf(".");
         var type = fileValue.substring(lodt+1);
         // alert(type);
-        if(type != "mp4" && type != "flv" ){
-            alert("上传视频必须为mp4或flv格式！");
+        if(type != "mp4" && type != "ogg" && type != "webm" ){
+            alert("上传视频必须为mp4、ogg或webm格式！");
             return false;
         }else{
             $('#video-form').submit();
@@ -22,6 +23,7 @@ $('#video').on('change', function(){
         }
     }else{
         $("#video").empty();
+        alert("标题不能为空！");
         return false;
     }
 });

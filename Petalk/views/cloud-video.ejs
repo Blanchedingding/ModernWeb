@@ -22,22 +22,56 @@
         <div class="cloudleft">
 
             <div>
-                <p><%=video.videotitle%></p>
-                <p><%=video.videodesc%></p>
+                <p style="font-size: 16px;font-weight: bold"><%=video.videotitle%></p>
+                <p style="color: #CC99CC"><%=video.videodesc%></p>
+                <input type="text" id="videoid" style="display: none" value="<%=video._id%>"/>
+                <p style="text-align: right;color: #CC99CC;margin-right: 120px"><a style="font-weight: bold"><%=video.user.username%></a><span>&nbsp&nbsp上传于&nbsp&nbsp<%=video.videotime%></span></p>
             </div>
-            <div class="abp" style="height:400px;width:90%">
-                <div id="danmaku-box" class="container" style="height:380px; width: 600px;" >
+            <div class="abp" >
+                <div id="danmaku-box" class="container" style="height:360px; width: 600px;" >
                 </div>
                 <video id="video-box" style="height:400px; width: 600px;" controls="controls" src="<%=video.videopath%>">
                 </video>
             </div>
 
-
         </div><!--cloudleft end-->
 
         <div class="cloudright">
+            <p style="text-align: right"><span id="roomnum"></span></p>
+            <div id="message-box" style="width:320px;margin: 0 auto;height:300px">
+
+            </div>
+
+            <form class="form-inline"  role="form" style="margin-top: 10px">
+                <div class="form-group">
+                    <select class="form-control col-sm-4" style="margin-left: 40px" id="mode-select">
+                        <option value="1">顶端滚动</option>
+                        <option value="2">底端滚动</option>
+                        <option value="4">底端渐隐</option>
+                        <option value="5">顶端渐隐</option>
+                        <option value="6">逆向滚动</option>
+                    </select>
+                    <select class="form-control col-sm-4"  style="margin-left: 10px" id="size-select">
+                        <option value="18">小</option>
+                        <option value="25" selected>中</option>
+                        <option value="36">大</option>
+                    </select>
+                    <select class="form-control col-sm-4"  style="margin-left: 10px" id="color-select">
+                        <option value="CC99CC">紫色</option>
+                        <option value="000000">黑色</option>
+                        <option value="ffffff">白色</option>
+                        <option value="ff0000">红色</option>
+                        <option value="00ff00">绿色</option>
+                        <option value="0000ff">蓝色</option>
+                        <option value="ffff00">黄色</option>
+                    </select>
+                </div>
+            </form>
+
             <input type="text" id="danmakuContent" placeholder="请输入弹幕……"/>
+            <input type="text" id="username" style="display: none" value="<%=locals.session.user.username%>"/>
             <input type="submit" class="mybutton" id="danmakuSubmmit" value="发送">
+
         </div>
 
     </div>
