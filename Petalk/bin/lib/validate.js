@@ -2,12 +2,12 @@
  * Created by lenovo on 2017/11/25.
  */
 module.exports.checkName = function(field){
-    var regName = /^.{4,16}$/;
+    var regName = /^.{2,16}$/;
     return function(req, res, next){
         if (regName.test(req.body[field])) {
            next();
         } else {
-            res.error('用户名必须为4-16位！', 'registerError');
+            res.error('用户名必须为2-16位！', 'registerError');
             res.redirect('back');
         }
     }

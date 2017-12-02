@@ -48,7 +48,10 @@ module.exports.addComment = function(req, res, next){
         // console.log('Comment saved.');
         Answer.update({_id:c.ansid},{$inc:{'comnum':1}}, function(err2, doc){
             if (err2) next(err2);
-            return res.json(c);
+            Answer.findOne({_id:c.ansid}, function(err3, ans){
+                if(err3) next(err3);
+                return res.json({status:true, comment:c, comnum:ans.comnum});
+            });
         });
     });
 };

@@ -16,7 +16,7 @@ window.onload = function(){
             $('.hotquestion-div').html("");
             $('.hotuser-div').html("");
             qs.forEach(function(q){
-                $('.hotquestion-div').append("<li style='margin-bottom: 5px'><a href='/topic?id="+q._id+"'>"+q.quescontent+"</a></li>");
+                $('.hotquestion-div').append("<li style='margin-bottom: 10px'><a href='/topic?id="+q._id+"'>"+q.quescontent+"</a></li>");
             })
             us.forEach(function(u){
 

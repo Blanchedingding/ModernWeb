@@ -13,6 +13,7 @@ var coms = $('.commentlabel');
 for(var i = 0; i < coms.length; i++) {
     coms[i].onclick = function () {
         var comdiv =  $(this).parents('.answer').find('#comment');
+        var comnum = $(this).parents('.answer').find('.commentlabel');
         if(comdiv.css('display') == 'none'){
             comdiv.css('display', 'block');
             var data = new Object();
@@ -28,10 +29,10 @@ for(var i = 0; i < coms.length; i++) {
                     withCredentials: true
                 },
                 success: function (result) {
+                    comnum.text("评论("+ result.comments.length +")");
                     comdiv.find('#comment-div').html("");
                     for(var j = 0; result && result.comments && j < result.comments.length; j++){
                         comdiv.find('#comment-div').append(appendCom(result.comments[j]));
-
                     }
                 }
             });
@@ -76,11 +77,13 @@ for(var k = 0; k < subcoms.length; k++){
                     withCredentials: true
                 },
                 success: function (result) {
-                    if(result){
-                        commentDiv.append(appendCom(result));
+                    if(result.status){
+                        commentDiv.append(appendCom(result.comment));
                         // console.log(num);
-                        comnum.text("评论("+ (num+1) +")");
+                        comnum.text("评论("+ result.comnum +")");
                         content.val("");
+                    } else {
+                        alert("服务器忙，请稍后重试！");
                     }
                 }
             });
