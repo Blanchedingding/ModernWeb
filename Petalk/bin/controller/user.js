@@ -52,8 +52,6 @@ module.exports.login = function(req, res, next){
             if(bcrypt.compareSync(req.body.password, user.password)){
                 user.password = '';
                 req.session.user = user;
-                // res.render('homepage');
-                // res.redirect('/profile');
                 next();
             } else {
                 res.error("密码不正确！", 'loginError');

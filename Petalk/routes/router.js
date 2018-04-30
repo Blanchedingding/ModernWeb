@@ -11,7 +11,6 @@ router.get('/', function(req, res, next) {
 });
 router.post('/login', userCtrl.login, topicCtrl.listQuestionsByHot);
 router.get('/logout', userCtrl.logout);
-// router.post('/changeIntro', userCtrl.changeIntro,topicCtrl.listQuestionsByUser);
 router.post('/changeIntro', userCtrl.changeIntro);
 router.get('/profile', topicCtrl.listQuestionsByUser);
 router.post(
@@ -32,6 +31,5 @@ router.post('/listCommentByAns', topicCtrl.listCommentsByAnswerId);
 
 router.get('/cloud', cloudCtrl.listVideos);
 router.get('/watchVideo', cloudCtrl.getVideo);
-// router.post('/uploadVedio', cloudCtrl.addVedio);
 
 module.exports = router;

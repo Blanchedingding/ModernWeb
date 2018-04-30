@@ -1,11 +1,11 @@
 /**
- * Created by lenovo on 2017/11/27.
+ * Created by dingding on 2017/11/27.
  */
 var socketio = require('socket.io');
 var io;
 var roomIds = [];//目前有人观看的视频id列表
 var currentRooms = {};//每个视频对应的观看用户列表
-var users = {};//每个socket.io对应的真实用户名map和正在观看的视频id
+var users = {};//每个socket.id对应的真实用户名map和正在观看的视频id
 
 
 exports.listen = function(server) {

@@ -1,5 +1,5 @@
 /**
- * Created by lenovo on 2017/11/25.
+ * Created by dingding on 2017/11/25.
  */
 module.exports.checkName = function(field){
     var regName = /^.{2,16}$/;

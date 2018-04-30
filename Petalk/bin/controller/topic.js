@@ -1,5 +1,5 @@
 /**
- * Created by lenovo on 2017/11/26.
+ * Created by dingding on 2017/11/26.
  */
 var Question = require('../models').Question;
 var Answer = require('../models').Answer;
@@ -45,7 +45,6 @@ module.exports.addComment = function(req, res, next){
     c.comtime = (new Date()).toLocaleDateString() + " " + (new Date()).toLocaleTimeString();
     c.save(function(err) {
         if (err) throw err;
-        // console.log('Comment saved.');
         Answer.update({_id:c.ansid},{$inc:{'comnum':1}}, function(err2, doc){
             if (err2) next(err2);
             Answer.findOne({_id:c.ansid}, function(err3, ans){

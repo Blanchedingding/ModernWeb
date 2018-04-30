@@ -2,12 +2,6 @@
  * Created by dingding on 2017/11/27.
  */
 window.addEventListener('load', function () {
-    //默认弹幕设置
-    // var danmakuConfig = {
-    //     size:25,
-    //     mode:1,
-    //     color:'#CC99CC'
-    // };
 
     // 在窗体载入完毕后再绑定
     var CM = new CommentManager($('#danmaku-box'));

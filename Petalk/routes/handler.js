@@ -1,5 +1,5 @@
 /**
- * Created by lenovo on 2017/11/25.
+ * Created by dingding on 2017/11/25.
  */
 module.exports.notfound = function(req, res){
     res.status(404).format({
