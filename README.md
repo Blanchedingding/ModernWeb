@@ -21,6 +21,24 @@ Now reconstruct by Node.js.
 ![avatar](readme2.png)
 
 ![avatar](readme3.png)
-
+(add videos under Petalk/public/video)
 
 More details for this project: https://blog.csdn.net/Blanchedingding/article/details/80150448
+
+## Petalk-docker:
+Run the Petalk project with docker-compose
+
+First: 
+```
+cd Petalk-docker/petalk-service
+npm install
+```
+
+Then, 
+```
+cd Petalk-docker
+docker-compose build
+docker-compose up
+```
+
+(Also add videos under Petalk/public/video)
