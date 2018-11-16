@@ -1,0 +1,131 @@
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<head>
+    <meta charset="UTF-8">
+    <title>登陆注册界面</title>
+    <link rel="stylesheet" type="text/css" href="font-awesome/css/font-awesome.css">
+    <link rel="stylesheet" type="text/css" href="font-awesome/css/font-awesome.min.css">
+    <link rel="stylesheet" type="text/css" href="stylesheets/login.css" >
+    <link rel="stylesheet" type="text/css" href="stylesheets/usericon.css" >
+    <script type="text/javascript" src="javascripts/lib/jquery-2.1.3.min.js" defer="defer" charset="utf-8"></script>
+    <script type="text/javascript" src="javascripts/login.js" defer="defer" charset="utf-8"></script>
+</head>
+
+<body>
+
+<div id="header">
+    <img src="img/biglogo.png" id="biglogo">
+
+
+    <form id="loginform" method="post"  action="/login">
+        <button class="button1" type="button" id="toregister">
+            <a>注册</a>
+            <i class="fa fa-arrow-right fa-1x"></i>
+        </button>
+        <br>
+        <input type="text" id="login_name" name='username' value="用户名"  class="login_input"><br>
+        <input type="text" id="login_pw" name='password' value="密码"  class="login_input"><br>
+        <input type="submit" id="loginbutton" value="立即登录" class="button2">
+    </form>
+
+    <form id="registerform" method="post"  action="/register" style="display: none">
+        <button class="button1" type="button" id="tologin">
+            <a>登录</a>
+            <i class="fa fa-arrow-right fa-1x"></i>
+        </button>
+        <br>
+        <input type="text" id="username" name="username" value="用户名"  autocomplete="off" class="login_input"><br>
+        <input type="text" id="email" name="email" value="邮箱" autocomplete="off" class="login_input"><br>
+        <input type="text" id="password" name="password" value="密码" autocomplete="off" class="login_input"><br>
+        <input type="text" id="confirmpw" name="confirmpw" value="确认密码" autocomplete="off" class="login_input"><br>
+        <input type="submit" id="registerbutton"  value="立即注册" class="button2">
+    </form>
+
+
+    <% include messages %>
+
+    <% if(locals.messages && locals.messages[0] ){
+        %>
+            <p style="display: none" id="errorType"><%=locals.messages[0].type%></p>
+    <%}%>
+</div>
+
+<div class="middle">
+    <div class='stage'>
+        <div class='image'>
+            <a href="#"><img src="img/user/user1.gif"></a>
+        </div>
+        <figure class='avatar'><a href="#"></a>
+        </figure>
+        <figure class='avatar'><a href="#"></a>
+        </figure>
+        <figure class='avatar'><a href="#"></a>
+        </figure>
+        <figure class='avatar'><a href="#"></a>
+        </figure>
+        <figure class='avatar'><a href="#"></a>
+        </figure>
+        <figure class='avatar'><a href="#"></a>
+        </figure>
+        <figure class='avatar'><a href="#"></a>
+        </figure>
+        <figure class='avatar'><a href="#"></a>
+        </figure>
+    </div>
+
+    <div class="left">
+        <div id="hoticon1" class="hoticon">
+            <a  href="#"><div id="num1" class="hotnum" ></div></a>
+            <div id="feedbox1" class="feedbox">
+                <p class="hotquestion"><a href="#">当愚蠢的萨摩耶遇见高傲的金毛会有什么情况发生呢？</a></p>
+            </div>
+        </div>
+
+        <div id="hoticon3" class="hoticon">
+            <a  href="#"><div id="num3" class="hotnum" ></div></a>
+            <div id="feedbox1" class="feedbox">
+                <p class="hotquestion"><a href="#">兔子的眼睛为什么是红的？</a></p>
+            </div>
+        </div>
+
+        <div id="hoticon5" class="hoticon">
+            <a  href="#"><div id="num5" class="hotnum" ></div></a>
+            <div id="feedbox1" class="feedbox">
+                <p class="hotquestion"><a href="#">仓鼠好几天都没吃东西了怎么办？在线等，急</a></p>
+            </div>
+        </div>
+    </div>
+
+
+    <div class="right">
+        <div id="hoticon2" class="hoticon">
+            <a  href="#"><div id="num2" class="hotnum" ></div></a>
+            <div id="feedbox2" class="feedbox">
+                <p class="hotquestion"><a href="#">羊为什么会咩咩的叫呢？</a></p>
+            </div>
+        </div>
+
+        <div id="hoticon4" class="hoticon">
+            <a  href="#"><div id="num4" class="hotnum" ></div></a>
+            <div id="feedbox2" class="feedbox">
+                <p class="hotquestion"><a href="#">小鸡平时吃什么呢？</a></p>
+            </div>
+        </div>
+
+        <div id="hoticon6" class="hoticon">
+            <a  href="#"><div id="num6" class="hotnum" ></div></a>
+            <div id="feedbox2" class="feedbox">
+                <p class="hotquestion"><a href="#">为什么都说猪蠢呢？猪其实很聪明的</a></p>
+            </div>
+        </div>
+    </div>
+</div>
+<!--<div class="footer">-->
+    <!--<a>@2017 Petalk</a>-->
+<!--</div>-->
+
+
+</body>
+
+
+</html>

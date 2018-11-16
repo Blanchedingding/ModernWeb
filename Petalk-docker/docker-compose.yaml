@@ -1,0 +1,30 @@
+version: '3'
+services:
+
+  petalk-mongo:
+    build: 
+      context: petalk-mongo
+      dockerfile: Mongo-Dockerfile
+    image: petalk-mongo
+    ports:
+      - 27017:27017
+    volumes:
+      - "./data/db:/data/db"
+      - "/etc/localtime:/etc/localtime"
+    networks:
+      - my-network
+
+  petalk-service:
+    build: petalk-service
+    image: petalk-service
+    restart: always
+    ports:
+      - 3000:3000
+    depends_on:
+      - petalk-mongo
+    networks:
+      - my-network
+
+networks:
+    my-network:
+      driver: bridge

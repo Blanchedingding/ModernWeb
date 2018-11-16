@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <title>小视频</title>
+    <!--<script src="/static/js/jquery-2.1.3.min.js"></script>-->
+    <!--<script src="/static/js/minigrid.js"></script>-->
+    <script src="javascripts/lib/jquery-2.1.3.min.js" charset="utf-8"></script>
+    <script type="text/javascript" src="javascripts/lib/minigrid.js"  charset="utf-8"></script>
+    <!--cimg-->
+    <!--<script src="/static/js/capTureImg.js"></script>-->
+    <!--style-->
+    <link rel="stylesheet" type="text/css" href="stylesheets/style.css">
+
+    <style>
+
+    </style>
+    <script>
+        //--获取视频缩略图--
+        function vload(obj) {
+            $(obj).removeAttr("poster");
+            var vimg = $("<img/>",{width:"100%"})[0];
+            captureImage(obj, vimg);
+            $(obj).after(vimg);
+            obj.remove();
+            minigrid('#photo-box', '.photo');
+        };
+        var scale = 0.8; //缩放
+        function captureImage(video, output) { //截图
+            try {
+                var videocanvas = $("<canvas/>")[0];
+                videocanvas.width = video.videoWidth * scale;
+                videocanvas.height = video.videoHeight * scale;
+                videocanvas.getContext('2d').drawImage(video, 0, 0, videocanvas.width, videocanvas.height);
+                output.src = videocanvas.toDataURL("image/png");
+                delete videocanvas;
+            } catch(e) {
+                output.src = "/static/img/status.gif"; //--status.gif为加载动画
+            }
+        };
+    </script>
+</head>
+
+<body>
+<!--"photo-box"为瀑布流 图片容器-->
+<div id="photo-box" class="container">
+    <!--"photo"显示视频缩略图与图片信息-->
+    <a class="photo" target="_blank" href="#" >
+        <img src="/static/img/公告.jpg" width="225" height="300">
+        <div class="content">
+            欢迎来到XXX(公告或广告位)
+        </div>
+    </a>
+    <a class="photo" target="_blank" href="#" >
+        <img src="/static/img/公告.jpg" width="225" height="300">
+        <div class="content">
+            欢迎来到XXX(公告或广告位)
+        </div>
+    </a>
+    <a class="photo" target="_blank" href="#">
+        <img src="/static/img/公告.jpg" width="225" height="300">
+        <div class="content">
+            欢迎来到XXX(公告或广告位)
+        </div>
+    </a>
+</div>
+
+<div id="load-over" style="">
+    加载中...
+</div>
+
+<!--遮罩层-->
+<!--<div id="vdo-mask" class="mask" hidden="hidden" style="display: none;">-->
+<!--<div class="close-layer" onclick="$(this).parent().fadeOut(300);$('#vdo-tBox').attr('src','');$('.side-part').html('')">-->
+<!--<i></i>-->
+<!--</div>-->
+<!--<div class="pin-view-wrapper">-->
+<!--<div class="side-part" style="text-align: center;padding: 10px 10px;font-size: 16px;font-weight: 600; color: #777;"></div>-->
+<!--<div class="main-part" style="padding: 10px 10px;">-->
+<!--<div class="item">-->
+<!--<div class="clearfix">-->
+<!--<video id="vdo-tBox" style="height: 600px; width: 100%;" controls="controls">-->
+<!--</video>-->
+<!--</div>-->
+<!--</div>-->
+<!--</div>-->
+<!--</div>-->
+<!--</div>-->
+
+
+<script>
+    minigrid('#photo-box', '.photo', 20, null,
+        function() {
+            //更新后回调
+        });//瀑布流插件初始化
+    window.addEventListener('resize', function() {//窗口大小改变自动排版
+        minigrid('#photo-box', '.photo');
+    });
+
+//    function b_load(page){
+//        $("#load-over").text("加载...");
+//        $.getJSON("/getvdojson?page=" + page, function(data) {
+//            if(data.length > 0) {
+//                for(var i in data) {
+//                    if(data[i]==null){
+//                        $("#load-over").text("加载完毕");
+//                        continue;
+//                    }
+//                    $("#photo-box").append(
+//                        $("<a/>", {
+//                            class: "photo",
+////										href:"javascript:void(0)",
+//                            onclick:"$('#vdo-mask').show(100); $('#vdo-tBox').attr('src','"+data[i].url+"');$('.side-part').html('"+data[i].name+"&nbsp;&nbsp;<small>(发布:"+(data[i].mtime.split('.')[0]).replace("T"," ").replace("/","-")+")</small>')"
+//                        })
+//                            .append($("<video/>", { src:  data[i].url , preload: "metadata", onloadeddata:'vload(this)',poster:"/static/img/status.gif",width: "100%"
+//                            }))
+//                            .append($("<div/>", { class: "content" }).html(data[i].name) )
+//                            .append($("<input/>",{type:"datetime-local",value:(data[i].mtime).split('.')[0],readonly:"readonly"
+//                            })));
+////									.css({width:"100%",
+////								border:"none",
+////								color: "#777",
+////								"padding-left": "10px",
+////								"padding-bottom": "10px"
+////								}))
+////						);
+//                }
+////					minigrid('#photo-box', '.photo');
+//            }
+//        });
+//    }
+
+    //		page = 0;
+    //		window.onscroll = function() {　
+    //			// var scrolltop=document.documentElement.scrollTop||document.body.scrollTop;
+    //			var tops = $(document).scrollTop(); //获取滚动条的位置
+    //			var sctop = $(document).height() - $(window).height();
+    //			if(tops >= sctop) //成立说明滚动条已在最底部
+    //			{
+    //				page = page + 1; //传递页码
+    //				b_load(page);
+    //			}
+    //		};
+    //		//默认先加载
+    //		b_load(page);
+    //		page=page+1;
+    //		b_load(page);
+
+    //播放时阻止 滚动条 上下滚动 防止滚动加载
+    //		$.fn.scrollUnique = function() {
+    //			return $(this).each(function() {
+    //				var eventType = 'mousewheel';
+    //				if(document.mozHidden !== undefined) {
+    //					eventType = 'DOMMouseScroll';
+    //				}
+    //				$(this).on(eventType, function(event) {
+    //					// 一些数据
+    //					var scrollTop = this.scrollTop,
+    //						scrollHeight = this.scrollHeight,
+    //						height = this.clientHeight;
+    //
+    //					var delta = (event.originalEvent.wheelDelta) ? event.originalEvent.wheelDelta : -(event.originalEvent.detail || 0);
+    //
+    //					if((delta > 0 && scrollTop <= delta) || (delta < 0 && scrollHeight - height - scrollTop <= -1 * delta)) {
+    //						// IE浏览器下滚动会跨越边界直接影响父级滚动，因此，临界时候手动边界滚动定位
+    //						this.scrollTop = delta > 0 ? 0 : scrollHeight;
+    //						// 向上滚 || 向下滚
+    //						event.preventDefault();
+    //					}
+    //				});
+    //			});
+    //		};
+    //		$('.mask').scrollUnique();//事件绑定
+</script>
+
+
+</body>
+
+</html>

@@ -1,0 +1,271 @@
+@charset "utf-8";
+body {
+    margin: 0;
+    font-family: 'Helvetica Neue',Helvetica,Arial,sans-serif;
+    background: #f4f4f4;
+}
+
+hr{
+    border:0;
+    background-color:#CC99CC;
+    height:1px;
+    clear:both;
+}
+
+img:hover{
+    box-shadow: 0 0 1px 1px rgba(0,0,0,0.5);
+}
+
+a:hover{
+    text-decoration: none;
+    color:orange;;
+}
+
+a{
+    color:#660066;
+}
+
+.nav {
+    top:0;
+    height:60px;
+    width:100%;
+    background-color:#CC99CC;
+
+}
+
+.nav-inner {
+    width:1200px;
+    height:60px;
+    background-color:#CC99CC;
+    margin-left:auto;
+    margin-right:auto;
+
+}
+
+.mybutton{
+    background: #CC99CC;
+    line-height: 24px;
+    border-radius: 8px;
+    outline:none;
+    font-family: 'Helvetica Neue',Helvetica,Arial,sans-serif;
+    font-size:20px;
+    font-weight: bold;
+    color: #fff;
+}
+
+.mybutton:hover{
+    color:#fff;
+    cursor:pointer;
+    background: #996699;
+    box-shadow:  0 0 1px 1px rgba(0,0,0,0.5);
+}
+
+/* style for logo
+--------------------------------*/
+.logo {
+    width:190px;
+    height:45px;
+    float:left;
+    margin-top:5px;
+    color:#efefef ;
+}
+
+.logo:hover{
+    box-shadow: 0 0 0 0 rgba(0,0,0,0);
+}
+
+/*搜索框*/
+#searchinput{
+    float: left;
+    background-color: #EBD3E8;
+    border-radius: 8px;
+    height: 28px;
+    width:200px;
+    outline:none;
+    margin:15px 0px 10px 30px;
+    color:#999;
+    font-size: 15px;
+    padding-right: 40px;
+}
+
+/*搜索按钮*/
+#searchbutton{
+    float: left;
+    margin-top:10px;
+    margin-left: 10px;
+    width:80px;
+    height:35px;
+}
+
+/* 三个菜单*/
+.menubar {
+    float:left;
+    line-height:60px;
+    padding:0px 0px;
+    margin-left:20px;
+    text-decoration:none;
+    display:block;
+    font-family: 'Helvetica Neue',Helvetica,Arial,sans-serif;
+    font-size:20px;
+    font-weight: bold;
+}
+
+.menu {
+    line-height:60px;
+    padding:0px;
+    float:left;
+    width:80px;
+    height:60px;
+    text-align:center;
+    list-style:none;
+}
+
+.menu > a {
+    display:block;
+    text-decoration:none;
+    color:#fff ;
+}
+
+.menu:hover {
+    background-color:#996699;
+    height:60px;
+    color: #FFFFFF;
+}
+/*用户头像名字*/
+.nav-user{
+    float:right;
+    margin-right:80px;
+    margin-top: 0px;
+    padding: 0px 0px;
+    line-height:60px;
+    padding:0px;
+    width:150px;
+    height:60px;
+    text-align:center;
+    list-style:none;
+    text-align: left;
+
+}
+
+.nav-user:hover{
+    background-color:#996699;
+    height:60px;
+}
+
+.nav-user img{
+    width:50px;
+    height:50px;
+    float:left;
+    margin-top:5px;
+    margin-left:5px;
+    border-radius: 50px;
+}
+
+.nav-user a{
+    text-decoration: none;
+    color:#fff;
+    font-size: 18px;
+    font-weight: bold;
+}
+
+#name{
+    float:left;
+    width:70px;
+    overflow: hidden;
+    text-overflow:ellipsis;
+    -o-text-overflow:ellipsis;
+    white-space:nowrap;
+}
+
+
+
+
+/* style for submenus
+---------------------------------*/
+.submenubar {
+    visibility:hidden;
+    border:2px solid #CC99CC;
+    border-radius:4px;
+    width:150px;
+    margin:60px 0px;
+    padding:5px;
+    text-align:left;
+    list-style-type:none;
+    line-height:30px;
+    position:absolute;
+}
+
+.nav-user:hover .submenubar {
+    visibility:visible;
+    background-color:#fff;
+
+}
+
+.submenubar > li {
+    list-style:none;
+    /*white-space:normal;*/
+    white-space:nowrap;
+    text-indent:0.5em;
+    border-radius: 4px;
+}
+
+.submenubar > li:hover {
+    background-color:#CC99CC;
+}
+
+.submenubar > li > a {
+    text-decoration:none;
+    color:#996699;
+    display:block;
+}
+
+.submenubar > li:hover > a {
+    color:#fff;
+}
+
+/* style for triangles in submenubar
+You can take this as a reference to make this triangle:
+http://stackoverflow.com/questions/9450733/css-triangle-custom-border-color
+----------------------------------------*/
+.submenubar::before,
+.submenubar::after {
+    content: ' ';
+    height: 0;
+    position: relative;
+    width: 0;
+}
+
+.submenubar::before {
+    position: absolute;
+    left: 65%;
+    top: -41%;
+    border: 14px solid;
+    border-color:  transparent transparent #CC99CC transparent;
+}
+
+.submenubar::after {
+    position: absolute;
+    left: 66%;
+    top: -37%;
+    border: 13px solid;
+    border-color: transparent transparent #fff transparent;
+}
+
+/*提问模态框*/
+#questiontitle, #questiondesc{
+    margin: 0 auto;
+    clear: both;
+    /*background-color: #EBD3E8;*/
+    border-radius: 8px;
+    width: 550px;
+    outline: none;
+    color: #000;
+    font-size: 16px;
+    resize: none;
+    padding: 10px 10px;
+    margin-bottom: 10px;
+}
+
+#questiontitle:hover, #questiondesc:hover{
+    background-color: #FFFFFF;
+}

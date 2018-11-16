@@ -1,0 +1,59 @@
+<div class="nav">
+    <div class="nav-inner">
+        <a href="logout"><img src="img/logo.png" class="logo"></a>
+        <i class="fa fa-search fa-1x" style="color:#996699;z-index:2;position:relative;left:-380px;top:20px;"></i>
+        <input type="text" id="searchinput" value="搜索问题或用户">
+        <input type="submit" class="mybutton" id="searchbutton" value="搜索">
+
+        <div class="menubar">
+            <li class="menu"><a style="cursor:pointer;color:#FFF" data-toggle="modal" data-target="#myModal">提问</a></li>
+            <li class="menu"><a style="color:#FFF" href="/hotTopics">话题</a></li>
+            <li class="menu"><a style="color:#FFF" href="/cloud">云养</a></li>
+        </div>
+
+        <div class="nav-user">
+            <a class="menu" ><img src="<%=locals.session.user.usericon%>">
+                <a id="name" ><%=locals.session.user.username%></a>
+            </a>
+            <ul class="submenubar">
+                <li><a href="profile">
+                        <i class="fa fa-user fa-1x"></i>&nbsp&nbsp&nbsp&nbsp我的主页</a></li>
+                <li><a href="logout">
+                        <i class="fa fa-sign-out fa-1x"></i>&nbsp&nbsp&nbsp&nbsp退出</a></li>
+            </ul>
+        </div>
+    </div>
+</div>
+
+<!--<div id="askdiv" style="display:none">-->
+    <!--<img src="img/number/close.png" id="closeicon2">-->
+    <!--<form action="saveQuestion?id=${user.id}" method="post" id="submitquestionform">-->
+        <!--<h3>问题标题</h3>-->
+        <!--<textarea id="questiontitle" name="questiontitle" value=""></textarea><br>-->
+        <!--<h3>问题描述（可选）</h3>-->
+        <!--<textarea id="questiondesc" name="questiondesc" value=""></textarea><br>-->
+        <!--<input type="button" class="mybutton" id="submitquestion" value="提交问题" onclick="saveque()">-->
+    <!--</form>-->
+<!--</div>-->
+
+<div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header" >
+                <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+            </div>
+            <div class="modal-body" style="background-color: #EBD3E8">
+                <form action="/saveTopic" method="post" id="submitquestionform">
+                    <h4>话题标题</h4>
+                    <textarea id="questiontitle" rows="1"  name="questiontitle" value="" placeholder="请输入问题标题……"></textarea><br>
+                    <h4>话题描述（可选）</h4>
+                    <textarea id="questiondesc" rows="2" name="questiondesc" value="" placeholder="请输入问题内容……"></textarea><br>
+                </form>
+            </div>
+            <div class="modal-footer">
+                <input type="button" class="mybutton" id="submitquestion" value="提交问题" onclick="saveque()">
+            </div>
+
+        </div><!-- /.modal-content -->
+    </div><!-- /.modal -->
+</div>

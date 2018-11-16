@@ -1,7 +1,7 @@
-var mongoose = require('mongoose'),
-    DB_URL = 'mongodb://localhost:27017/petalk';
 // var mongoose = require('mongoose'),
-//     DB_URL = 'mongodb://petalk-mongo/petalk';
+//     DB_URL = 'mongodb://localhost:27017/petalk';
+var mongoose = require('mongoose'),
+    DB_URL = 'mongodb://petalk-mongo/petalk';
 
 mongoose.Promise = global.Promise;
 var reconnectTimeout = 5000; // ms.

@@ -1,0 +1,71 @@
+/*右侧热点问题和用户*/
+.questionright{
+    float:right;
+    width:300px;
+    list-style-type:none;
+    color:#660066;
+}
+
+.hotquestion{
+    line-height:22px;
+    font-size: 15px;
+}
+
+
+.hotquestion li a{
+    text-decoration: none;
+    color:#660066;
+}
+
+.hotquestion li a:hover{
+    /*text-decoration:underline;*/
+    color:orange;
+}
+
+.hotuser{
+    color:#660066;
+}
+
+.userbrief{
+    margin:15px 5px;
+    color:#660066;
+}
+
+.userbrief img{
+    /*border-radius: 50px;*/
+    width:50px;
+    height:50px;
+    float:left;
+    margin-right: 10px;
+}
+
+.userbrief img:hover{
+    cursor: pointer;
+}
+
+.hotname{
+    font-size: 16px;
+    font-weight: bold;
+    text-decoration: none;
+}
+
+.hotname:hover{
+    cursor: pointer;
+    color:orange;
+}
+
+.introduction{
+    font-size: 15px;
+    text-decoration:none;
+    word-break:break-all;
+    padding:0px 0px;
+    margin-left:60px;
+    margin-top: 10px;
+    color:#996699;
+}
+
+.copyright{
+    text-align: center;
+    color:#CC99CC;
+    font-size: 16px;
+}

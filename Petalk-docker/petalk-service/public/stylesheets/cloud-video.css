@@ -1,0 +1,116 @@
+.cloudmain{
+    width:1200px;
+    min-width: 1200px;
+    margin:auto;
+    font-family: "微软雅黑";
+    color:#660066;
+}
+
+.cloudleft{
+    float:left;
+    width:700px;
+    color:#660066;
+    margin-top:30px;
+    margin-bottom: 50px;
+    margin-left: 20px;
+}
+
+.cloudright{
+    margin-top: 80px;
+    float:left;
+    width:350px;
+    list-style-type:none;
+    color:#660066;
+}
+
+/*弹幕*/
+#danmakuContent{
+    border-radius: 8px;
+    height: 30px;
+    width: 250px;
+    outline: none;
+    margin: 15px 0px 10px 20px;
+    color: #999;
+    font-size: 15px;
+    padding-right: 40px;
+    padding: 5px;
+}
+
+
+
+.abp{
+    position:relative;
+}
+.abp .container{
+    -webkit-transform: matrix3d(1,0,0,0,0,1,0,0,0,0,1,0,0,0,0,1);
+    transform: matrix3d(1,0,0,0,0,1,0,0,0,0,1,0,0,0,0,1);
+    position: absolute;
+    display: block;
+    overflow: hidden;
+    margin: 0;
+    border: 0;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    z-index: 9999;
+    touch-callout: none;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+}
+
+.abp .container .cmt{
+    -webkit-transform: matrix3d(1,0,0,0,0,1,0,0,0,0,1,0,0,0,0,1);
+    transform: matrix3d(1,0,0,0,0,1,0,0,0,0,1,0,0,0,0,1);
+    -webkit-transform-origin: 0% 0%;
+    -ms-transform-origin: 0% 0%;
+    transform-origin: 0% 0%;
+    position: absolute;
+    padding: 3px 0 0 0;
+    margin: 0;
+    color: #fff;
+    font-family: SimHei, SimSun, Heiti, "MS Mincho", "Meiryo", "Microsoft YaHei", monospace;
+    font-size: 25px;
+    text-decoration: none;
+    text-shadow: -1px 0 black, 0 1px black, 1px 0 black, 0 -1px black;
+    -webkit-text-size-adjust: none;
+    -ms-text-size-adjust: none;
+    text-size-adjust: none;
+    line-height: 100%;
+    letter-spacing: 0;
+    word-break: keep-all;
+    white-space: pre;
+
+}
+.abp .container .cmt.noshadow{
+    text-shadow: none;
+}
+.abp .container .cmt.rshadow{
+    text-shadow: -1px 0 white, 0 1px white, 1px 0 white, 0 -1px white;
+}
+
+/*右边的弹幕发送和显示*/
+#message-box{
+    border-radius: 8px;
+    outline: none;
+    font-size: 15px;
+    background-color: #FFF;
+    box-shadow:0px 0px 3px #000;
+    padding:5px;
+    overflow:auto;
+}
+
+#message-box li{
+    word-break:break-all ;
+    background-color: #FFFFCC;
+    border-radius: 8px;
+    padding:5px;
+    color: #000;
+    margin-bottom: 5px;
+}
+
+#message-box li.myli{
+    background-color: #CCCCFF;
+}

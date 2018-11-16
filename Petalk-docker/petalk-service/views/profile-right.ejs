@@ -1,0 +1,42 @@
+<div class="profileright">
+    <div id="warning">点击显示个人简介</div>
+    <img id="myicon" src="<%=locals.session.user.usericon%>">
+    <div id="aboutme">
+        <img src="img/number/close.png" id="closeicon">
+        <span class="myname"><%=locals.session.user.username%>&nbsp&nbsp</span></br>
+        <div style="text-align: left;margin-top: 10px"><span style="font-size: 16px">&nbsp&nbsp<%=locals.session.user.briefintro%></span></div>
+    </div>
+
+    <div class="edit-div">
+        <form method='post' action="/changeIcon" enctype='multipart/form-data' id="photo-form">
+            <input type='file' name='photo' id="photo" style="display: none"/>
+            <input type="button" class="mybutton" id="change-icon" value="上传头像">
+        </form>
+
+        <input type="button" class="mybutton" id="change-intro" value="修改简介">
+
+        <form method='post' action="/changeIntro" id="intro-form" style="display: none">
+            <textarea rows="4" cols="20" id="intro-text" name="introText" placeholder="请输入个人简介……"></textarea>
+            <input type="button" class="mybutton" id="change-intro-confirm" value="确认">
+            <input type="button" class="mybutton" id="change-intro-cancel" value="取消">
+        </form>
+
+    </div>
+
+    <hr>
+    <div class="recentto">
+        <h4 style="font-weight: bold">最近关注了</h4>
+        <a href="#"><img src="img/user/user2.jpg"></a>
+        <a href="#"><img src="img/user/user3.jpg"></a>
+        <a href="#"><img src="img/user/user4.jpg"></a>
+    </div>
+
+    <hr>
+    <div class="recented">
+        <h4 style="font-weight: bold">最近被他们关注</h4>
+        <a href="#"><img src="img/user/user5.jpg"></a>
+        <a href="#"><img src="img/user/user6.jpg"></a>
+        <a href="#"><img src="img/user/user7.jpg"></a>
+        <a href="#"><img src="img/user/user8.jpg"></a>
+    </div>
+</div>
